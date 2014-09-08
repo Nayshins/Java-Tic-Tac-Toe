@@ -24,4 +24,13 @@ public class Rules {
         }
         return false;
     }
+
+    public boolean gameOver(Board board) {
+        if (winner(board.makeSolutions())) {
+            return true;
+        } else if (draw(board.getEmpty())){
+            return true;
+        }
+        return false;
+    }
 }

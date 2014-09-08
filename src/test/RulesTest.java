@@ -60,7 +60,27 @@ public class RulesTest {
         assertFalse("Returns false when there is not a draw", rules.draw(board.getEmpty()));
     }
     @Test
-    public void gameOverTest() {
-
+    public void noGameOverTest() {
+        assertFalse("Return false when there is no winner", rules.gameOver(board));
+    }
+    @Test
+    public void winGameOverTest() {
+        board.setCell('X', 0);
+        board.setCell('X', 1);
+        board.setCell('X', 2);
+        assertTrue("Return true when the game is won", rules.gameOver(board));
+    }
+    @Test
+    public void drawGameOverTest() {
+        board.setCell('X', 0);
+        board.setCell('O', 1);
+        board.setCell('X', 2);
+        board.setCell('X', 3);
+        board.setCell('O', 4);
+        board.setCell('X', 5);
+        board.setCell('O', 6);
+        board.setCell('X', 7);
+        board.setCell('O', 8);
+        assertTrue("Return true when the game ends in a draw", rules.gameOver(board));
     }
 }
