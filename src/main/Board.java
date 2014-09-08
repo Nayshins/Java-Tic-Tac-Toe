@@ -1,12 +1,15 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by Nayshins on 9/8/14.
  */
 public class Board {
 
 
-    private char[] grid = new char[9];
+    private char[] grid = new char[]{' ',' ',' ',' ',' ',' ',' ',' ',' '};
 
     public char[] getGrid() {
         return grid;
@@ -18,5 +21,42 @@ public class Board {
 
     public void setCell(char x, int i) {
         grid[i] = x;
+    }
+
+    public ArrayList<Integer> getLocations(char x) {
+        ArrayList<Integer> locations = new ArrayList<Integer>();
+        for (int i = 0; i < grid.length; i++) {
+            if (grid[i] == x) {
+                locations.add(i);
+            }
+        }
+        return locations;
+    }
+
+    public ArrayList<Integer> getEmpty() {
+        ArrayList<Integer> emptyLocations = new ArrayList<Integer>();
+        for (int i = 0; i < grid.length; i++) {
+//          Check if char is empty value
+            if (grid[i] == ' ') {
+                emptyLocations.add(i);
+            }
+        }
+        return emptyLocations;
+    }
+
+    public ArrayList<char[]> makeRows() {
+        ArrayList<char[]> rows = new ArrayList<char[]>();
+        rows.add(Arrays.copyOfRange(grid,0,3));
+        rows.add(Arrays.copyOfRange(grid,3,6));
+        rows.add(Arrays.copyOfRange(grid,6,grid.length));
+        return rows;
+    }
+
+    public ArrayList<char[]> makeColumns() {
+        ArrayList<char[]> columns = new ArrayList<char[]>();
+        columns.add(new char[]{ grid[0], grid[3], grid[6]});
+        columns.add(new char[]{ grid[1], grid[4], grid[7]});
+        columns.add(new char[]{ grid[2], grid[5], grid[8]});
+        return columns;
     }
 }
