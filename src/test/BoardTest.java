@@ -113,5 +113,4 @@ public class BoardTest {
         assertArrayEquals(solutionsTest.get(6),board.makeSolutions().get(6));
         assertArrayEquals(solutionsTest.get(7),board.makeSolutions().get(7));
     }
-
 }
