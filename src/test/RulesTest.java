@@ -59,4 +59,8 @@ public class RulesTest {
     public void noDrawTest() {
         assertFalse("Returns false when there is not a draw", rules.draw(board.getEmpty()));
     }
+    @Test
+    public void gameOverTest() {
+
+    }
 }
