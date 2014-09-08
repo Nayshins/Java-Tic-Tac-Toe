@@ -37,6 +37,21 @@ public class RulesTest {
     public void drawTest() {
         Board board = new Board();
         Rules rules = new Rules();
-
+        board.setCell('X', 0);
+        board.setCell('O', 1);
+        board.setCell('X', 2);
+        board.setCell('X', 3);
+        board.setCell('O', 4);
+        board.setCell('X', 5);
+        board.setCell('O', 6);
+        board.setCell('X', 7);
+        board.setCell('O', 8);
+        assertTrue("Returns true when there is a draw", rules.draw(board.getEmpty()));
+    }
+    @Test
+    public void noDrawTest() {
+        Board board = new Board();
+        Rules rules = new Rules();
+        assertFalse("Returns false when there is not a draw", rules.draw(board.getEmpty()));
     }
 }

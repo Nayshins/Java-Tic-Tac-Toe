@@ -17,4 +17,11 @@ public class Rules {
         }
         return false;
     }
+
+    public boolean draw(ArrayList<Integer> empties) {
+        if (empties.isEmpty()){
+           return true;
+        }
+        return false;
+    }
 }
