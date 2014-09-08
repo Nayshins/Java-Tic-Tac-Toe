@@ -80,5 +80,38 @@ public class BoardTest {
         colTest.add(new char[]{' ',' ',' '});
         assertArrayEquals(colTest.get(0), board.makeColumns().get(0));
     }
+    @Test
+    public void makeDiagonalsTest() {
+        board.setCell('X', 0);
+        board.setCell('X', 4);
+        board.setCell('X', 8);
+        ArrayList<char[]> diagonalsTest = new ArrayList<char[]>();
+        diagonalsTest.add(new char[]{'X','X','X'});
+        diagonalsTest.add(new char[]{' ',' ',' '});
+        assertArrayEquals(diagonalsTest.get(0), board.makeDiagonals().get(0));
+    }
+    @Test
+    public void makeSolutionsTest() {
+        board.setCell('X', 0);
+        board.setCell('X', 1);
+        board.setCell('X', 2);
+        ArrayList<char[]> solutionsTest = new ArrayList<char[]>();
+        solutionsTest.add(new char[]{'X','X','X'});
+        solutionsTest.add(new char[]{' ',' ',' '});
+        solutionsTest.add(new char[]{' ',' ',' '});
+        solutionsTest.add(new char[]{'X',' ',' '});
+        solutionsTest.add(new char[]{'X',' ',' '});
+        solutionsTest.add(new char[]{'X',' ',' '});
+        solutionsTest.add(new char[]{'X',' ',' '});
+        solutionsTest.add(new char[]{'X',' ',' '});
+        assertArrayEquals(solutionsTest.get(0),board.makeSolutions().get(0));
+        assertArrayEquals(solutionsTest.get(1),board.makeSolutions().get(1));
+        assertArrayEquals(solutionsTest.get(2),board.makeSolutions().get(2));
+        assertArrayEquals(solutionsTest.get(3),board.makeSolutions().get(3));
+        assertArrayEquals(solutionsTest.get(4),board.makeSolutions().get(4));
+        assertArrayEquals(solutionsTest.get(5),board.makeSolutions().get(5));
+        assertArrayEquals(solutionsTest.get(6),board.makeSolutions().get(6));
+        assertArrayEquals(solutionsTest.get(7),board.makeSolutions().get(7));
+    }
 
 }

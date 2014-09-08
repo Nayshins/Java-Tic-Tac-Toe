@@ -59,4 +59,19 @@ public class Board {
         columns.add(new char[]{ grid[2], grid[5], grid[8]});
         return columns;
     }
+
+    public ArrayList<char[]> makeDiagonals() {
+        ArrayList<char[]> diagonals = new ArrayList<char[]>();
+        diagonals.add(new char[]{ grid[0], grid[4], grid[8]});
+        diagonals.add(new char[]{ grid[2], grid[4], grid[6]});
+        return diagonals;
+    }
+
+    public ArrayList<char[]> makeSolutions() {
+        ArrayList<char[]> solutions = new ArrayList<char[]>();
+        solutions.addAll(makeRows());
+        solutions.addAll(makeColumns());
+        solutions.addAll(makeDiagonals());
+        return solutions;
+    }
 }
