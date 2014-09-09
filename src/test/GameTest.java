@@ -1,5 +1,6 @@
 package test;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import main.Game;
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ import org.junit.Test;
 public class GameTest {
     @Test
     public void playGameTest() {
-        Game game = new Game;
+        Game game = new Game();
 
     }
 }

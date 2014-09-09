@@ -8,8 +8,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BoardTest {
     Board board;
@@ -28,19 +27,25 @@ public class BoardTest {
         assertArrayEquals(testGrid, board.getGrid());
     }
     @Test
-    public void testGetAndSetCell() {
+    public void setCellTest () throws Exception{
         board.setCell('X',0);
         assertEquals('X', board.getCell(0));
     }
+    @Test(expected = Exception.class)
+    public void doesNotSetCellIfOccupied() throws Exception {
+        board.setCell('X', 0);
+        board.setCell('O', 0);
+    }
+
     @Test
-    public void locationsTest() {
+    public void locationsTest() throws Exception{
         board.setCell('X', 0);
         ArrayList<Integer> testArray = new ArrayList<Integer>();
         testArray.add(0);
         assertEquals(testArray, board.getLocations('X'));
     }
     @Test
-    public void emptyCellTest() {
+    public void emptyCellTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
@@ -49,7 +54,7 @@ public class BoardTest {
         assertEquals(testArray, board.getEmpty());
     }
     @Test
-    public void makeRowsTest() {
+    public void makeRowsTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
@@ -60,7 +65,7 @@ public class BoardTest {
         assertArrayEquals(rowTest.get(0), board.makeRows().get(0));
     }
     @Test
-    public void makeRowsTestEmpty(){
+    public void makeRowsTestEmpty() throws Exception{
         ArrayList<char[]> rowTest = new ArrayList<char[]>();
         rowTest.add(new char[]{'X','X','X'});
         rowTest.add(new char[]{' ',' ',' '});
@@ -68,7 +73,7 @@ public class BoardTest {
         assertArrayEquals(rowTest.get(2), board.makeRows().get(2));
     }
     @Test
-    public void makeColumnsTest() {
+    public void makeColumnsTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 3);
         board.setCell('X', 6);
@@ -79,7 +84,7 @@ public class BoardTest {
         assertArrayEquals(colTest.get(0), board.makeColumns().get(0));
     }
     @Test
-    public void makeDiagonalsTest() {
+    public void makeDiagonalsTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 4);
         board.setCell('X', 8);
@@ -89,13 +94,13 @@ public class BoardTest {
         assertArrayEquals(diagonalsTest.get(0), board.makeDiagonals().get(0));
     }
     @Test
-    public void makeSolutionsTest() {
+    public void makeSolutionsTest() throws Exception {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
         ArrayList<char[]> solutionsTest = new ArrayList<char[]>();
         solutionsTest.add(new char[]{'X','X','X'});
-        solutionsTest.add(new char[]{' ',' ',' '});
+        solutionsTest.add(new char[]{' ', ' ', ' '});
         solutionsTest.add(new char[]{' ',' ',' '});
         solutionsTest.add(new char[]{'X',' ',' '});
         solutionsTest.add(new char[]{'X',' ',' '});
@@ -110,5 +115,14 @@ public class BoardTest {
         assertArrayEquals(solutionsTest.get(5),board.makeSolutions().get(5));
         assertArrayEquals(solutionsTest.get(6),board.makeSolutions().get(6));
         assertArrayEquals(solutionsTest.get(7),board.makeSolutions().get(7));
+    }
+    @Test
+    public void cellOccupiedTest() throws Exception{
+        board.setCell('X',0);
+        assertTrue(board.cellOccupied(0));
+    }
+    @Test
+    public void cellNotOccupiedTest() throws Exception{
+        assertFalse(board.cellOccupied(0));
     }
 }

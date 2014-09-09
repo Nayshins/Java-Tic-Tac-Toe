@@ -15,18 +15,22 @@ public class Board {
         return grid;
     }
 
-    public char getCell(int i) {
-        return grid[i];
+    public char getCell(int index) {
+        return grid[index];
     }
 
-    public void setCell(char x, int i) {
-        grid[i] = x;
+    public void setCell(char marker, int index) throws Exception {
+        if (cellOccupied(index)){
+            throw new Exception();
+        } else {
+            grid[index] = marker;
+        }
     }
 
-    public ArrayList<Integer> getLocations(char x) {
+    public ArrayList<Integer> getLocations(char marker) {
         ArrayList<Integer> locations = new ArrayList<Integer>();
         for (int i = 0; i < grid.length; i++) {
-            if (grid[i] == x) {
+            if (grid[i] == marker) {
                 locations.add(i);
             }
         }
@@ -73,5 +77,13 @@ public class Board {
         solutions.addAll(makeColumns());
         solutions.addAll(makeDiagonals());
         return solutions;
+    }
+
+    public boolean cellOccupied(int index) {
+        if (grid[index] != ' '){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

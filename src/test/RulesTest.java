@@ -1,5 +1,6 @@
 package test;
 
+import jdk.nashorn.internal.runtime.ECMAException;
 import main.Board;
 import main.Rules;
 import org.junit.After;
@@ -29,21 +30,21 @@ public class RulesTest {
         assertFalse("Empty grid returns false", rules.winner(board.makeSolutions()));
    }
    @Test
-   public void winnerRowTest() {
+   public void winnerRowTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
         assertTrue("3 in a row returns true", rules.winner(board.makeSolutions()));
    }
    @Test
-   public void winnerColTest() {
+   public void winnerColTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('X', 3);
         board.setCell('X', 6);
         assertTrue("3 in a column return true", rules.winner(board.makeSolutions()));
    }
     @Test
-    public void drawTest() {
+    public void drawTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('O', 1);
         board.setCell('X', 2);
@@ -56,22 +57,22 @@ public class RulesTest {
         assertTrue("Returns true when there is a draw", rules.draw(board.getEmpty()));
     }
     @Test
-    public void noDrawTest() {
+    public void noDrawTest() throws Exception{
         assertFalse("Returns false when there is not a draw", rules.draw(board.getEmpty()));
     }
     @Test
-    public void noGameOverTest() {
+    public void noGameOverTest() throws Exception{
         assertFalse("Return false when there is no winner", rules.gameOver(board));
     }
     @Test
-    public void winGameOverTest() {
+    public void winGameOverTest() throws Exception {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
         assertTrue("Return true when the game is won", rules.gameOver(board));
     }
     @Test
-    public void drawGameOverTest() {
+    public void drawGameOverTest() throws Exception{
         board.setCell('X', 0);
         board.setCell('O', 1);
         board.setCell('X', 2);
