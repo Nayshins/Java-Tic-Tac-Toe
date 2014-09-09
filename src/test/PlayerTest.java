@@ -13,4 +13,8 @@ public class PlayerTest {
         Player player = new Player('X');
         assertEquals('X', player.getMarker());
     }
+    @Test
+    public void makeMoveTest(){
+
+    }
 }
