@@ -17,6 +17,10 @@ public class Player {
         return marker;
     }
 
+    public void makeMove(int index) throws Exception {
+        board.setCell(marker, index);
+    }
+
     public Board getBoard() {
         return board;
     }

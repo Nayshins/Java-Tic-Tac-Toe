@@ -5,8 +5,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -33,6 +33,17 @@ public class ConsoleUiTest {
 
         console.print("hello");
         assertEquals("hello\n", outContent.toString());
+    }
+    @Test
+    public void getStandardInput() throws IOException {
+        String input = "Test input";
+        InputStream stdin = System.in;
+        try {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            assertEquals(input, console.getInput());
+        } finally {
+            System.setIn(stdin);
+        }
     }
     @Test
     public void welcomeTest() {
