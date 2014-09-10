@@ -6,12 +6,18 @@ package main;
 public class Player {
 
     private char marker;
+    private Board board;
 
-    public Player(char marker) {
+    public Player(char marker, Board board) {
         this.marker = marker;
+        this.board = board;
     }
 
     public char getMarker() {
         return marker;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 }
