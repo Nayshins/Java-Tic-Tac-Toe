@@ -125,4 +125,10 @@ public class BoardTest {
     public void cellNotOccupiedTest() throws Exception{
         assertFalse(board.cellOccupied(0));
     }
+    @Test
+    public void undoCellTest() throws Exception {
+        board.setCell('X', 0);
+        board.undoMove(0);
+        assertEquals(' ', board.getCell(0));
+    }
 }

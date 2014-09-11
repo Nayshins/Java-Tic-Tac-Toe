@@ -87,4 +87,7 @@ public class Board {
         }
     }
 
+    public void undoMove(int index) {
+        grid[index] = ' ';
+    }
 }

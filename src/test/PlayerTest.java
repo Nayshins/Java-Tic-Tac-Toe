@@ -1,6 +1,7 @@
 package test;
 
 import main.Board;
+import main.HumanPlayer;
 import main.Player;
 import org.junit.After;
 import org.junit.Before;
@@ -17,7 +18,7 @@ public class PlayerTest {
     @Before
     public void setUp() {
         this.board = new Board();
-        this.player = new Player('X', board);
+        this.player = new HumanPlayer('X', board);
     }
     @After
     public void tearDown() {

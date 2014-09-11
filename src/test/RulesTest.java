@@ -2,6 +2,7 @@ package test;
 
 import jdk.nashorn.internal.runtime.ECMAException;
 import main.Board;
+import main.GameRules;
 import main.Rules;
 import org.junit.After;
 import org.junit.Before;
@@ -18,7 +19,7 @@ public class RulesTest {
    @Before
    public void setUp(){
        this.board = new Board();
-       this.rules = new Rules();
+       this.rules = new GameRules();
    }
    @After
    public void tearDown() {
@@ -83,5 +84,26 @@ public class RulesTest {
         board.setCell('X', 7);
         board.setCell('O', 8);
         assertTrue("Return true when the game ends in a draw", rules.gameOver(board));
+    }
+    @Test
+    public void winTestReturnsTrueForWinner() throws Exception {
+        board.setCell('X', 0);
+        board.setCell('X', 1);
+        board.setCell('X', 2);
+        assertTrue(rules.winTest('X', board.makeSolutions()));
+    }
+     @Test
+    public void winTestReturnsFalseIfNotWinner() throws Exception {
+        board.setCell('O', 0);
+        board.setCell('O', 1);
+        board.setCell('X', 2);
+        assertFalse(rules.winTest('X', board.makeSolutions()));
+    }
+    @Test
+    public void winTestReturnsTrueForO() throws Exception {
+        board.setCell('O', 0);
+        board.setCell('O', 1);
+        board.setCell('O', 2);
+        assertTrue(rules.winTest('O', board.makeSolutions()));
     }
 }

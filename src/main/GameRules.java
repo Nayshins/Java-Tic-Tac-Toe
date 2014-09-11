@@ -3,12 +3,11 @@ package main;
 import java.util.ArrayList;
 
 /**
- * Created by Nayshins on 9/8/14.
+ * Created by Nayshins on 9/10/14.
  */
-public abstract class Rules {
-    public boolean isGameOver;
+public class GameRules extends Rules {
 
-     public boolean winner(ArrayList<char[]> solutions) {
+    public boolean winner(ArrayList<char[]> solutions) {
         for (char[] solution : solutions) {
             char first = solution[0];
             if (first == ' ') {
@@ -36,15 +35,15 @@ public abstract class Rules {
         return false;
     }
 
-    public boolean isGameOver() {
-        return isGameOver;
+    public boolean winTest(char marker, ArrayList<char[]> solutions){
+        for (char[] solution : solutions) {
+            char first = solution[0];
+            if (first == ' ' || first != marker) {
+                continue;
+            } else if(marker == solution[1] & first == solution[2]) {
+                return true;
+            }
+        }
+        return false;
     }
-
-    public void setGameOver(boolean isGameOver) {
-        this.isGameOver = isGameOver;
-    }
-
-    public boolean winTest(char marker, ArrayList<char[]> chars){
-        return true;
-    };
 }

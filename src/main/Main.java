@@ -4,8 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 	    Board board = new Board();
-        Player player = new Player('X', board);
-        ComputerPlayer computer = new ComputerPlayer('O', board);
+        Rules rules = new GameRules();
+        Player player = new HumanPlayer('X', board);
+        Player computer = new ComputerPlayer('O', board, rules);
         ConsoleUi console = new ConsoleUi();
 
     }
