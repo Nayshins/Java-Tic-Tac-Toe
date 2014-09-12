@@ -52,4 +52,8 @@ public abstract class Rules {
 
     public void setGameOverQueue(Queue<Boolean> gameOverQueue) {
     }
+
+    public boolean isDraw() {
+        return false;
+    }
 }

@@ -7,6 +7,12 @@ import java.util.ArrayList;
  */
 public class GameRules extends Rules {
 
+    public boolean isDraw() {
+        return isDraw;
+    }
+
+    private boolean isDraw = false;
+
     public boolean winner(ArrayList<char[]> solutions) {
         for (char[] solution : solutions) {
             char first = solution[0];
@@ -21,6 +27,7 @@ public class GameRules extends Rules {
 
     public boolean draw(ArrayList<Integer> empties) {
         if (empties.isEmpty()){
+           isDraw = true;
            return true;
         }
         return false;

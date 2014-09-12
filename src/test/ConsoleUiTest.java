@@ -69,7 +69,7 @@ public class ConsoleUiTest {
                 "---+---+---\n" +
                 " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
                 "---+---+---\n" +
-                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) + "\n";
+                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) + "\n\n";
         assertEquals(boardString, outContent.toString());
 
     }
@@ -86,5 +86,11 @@ public class ConsoleUiTest {
         char marker = 'X';
         console.winner(marker);
         assertEquals("X is the winner!\n", outContent.toString() );
+    }
+
+    @Test
+    public void testComputerMakingMove() throws Exception {
+        console.computerMove();
+        assertEquals("Computer is making it's move\n", outContent.toString());
     }
 }

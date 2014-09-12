@@ -37,7 +37,7 @@ public class ConsoleUi implements UI {
                 "---+---+---\n" +
                 " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
                 "---+---+---\n" +
-                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8);
+                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) +"\n";
         print(boardString);
     }
 
@@ -47,5 +47,17 @@ public class ConsoleUi implements UI {
 
     public void winner(Character marker) {
         print(marker + " is the winner!");
+    }
+
+    public void computerMove() {
+        print("Computer is making it's move");
+    }
+
+    public void draw() {
+        print("Game ended in a draw!");
+    }
+
+    public void invalidInput() {
+        print("Invalid input!");
     }
 }

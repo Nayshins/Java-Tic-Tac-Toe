@@ -42,6 +42,7 @@ public class HumanPlayer extends Player {
         if (input.matches("[1-9]")){
             return true;
         }
+        console.invalidInput();
         return false;
     }
 }

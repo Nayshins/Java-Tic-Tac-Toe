@@ -34,12 +34,17 @@ public class Game {
             if (currentPlayer instanceof HumanPlayer){
                 currentPlayer.selectMove();
             } else if(currentPlayer instanceof ComputerPlayer) {
+                console.computerMove();
                 currentPlayer.makeMove(currentPlayer.unbeatableComputer());
             }
             console.printBoard();
             switchPlayers();
         }
-        switchPlayers();
+        if (!rules.isDraw()){
+           switchPlayers();
+            console.winner(currentPlayer.getMarker());
+        }
+        console.draw();
 
     }
 
