@@ -1,5 +1,7 @@
 package main;
 
+import java.io.IOException;
+
 /**
  * Created by Nayshins on 9/8/14.
  */
@@ -24,7 +26,9 @@ public abstract class Player {
         return board;
     }
 
-    public void lazyComputer() throws Exception{}
+    public int lazyComputer() throws Exception{
+        return 0;
+    }
 
     public char getOpponent(char marker) {
         return 0;
@@ -48,8 +52,10 @@ public abstract class Player {
         return false;
     };
 
-    public int selectMove() {
+    public void selectMove() throws IOException {
+    }
 
-        return 0;
+    public boolean validateMove(String s) {
+        return false;
     }
 }

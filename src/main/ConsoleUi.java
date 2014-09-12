@@ -40,4 +40,12 @@ public class ConsoleUi implements UI {
                 " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8);
         print(boardString);
     }
+
+    public void spaceOccupied() {
+        print("Space already filled please choose another");
+    }
+
+    public void winner(Character marker) {
+        print(marker + " is the winner!");
+    }
 }

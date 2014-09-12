@@ -73,4 +73,18 @@ public class ConsoleUiTest {
         assertEquals(boardString, outContent.toString());
 
     }
+
+    @Test
+    public void testSpaceOccupiedWarning() throws Exception {
+        console.spaceOccupied();
+        assertEquals("Space already filled please choose another\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testPrintsWinner(){
+        char marker = 'X';
+        console.winner(marker);
+        assertEquals("X is the winner!\n", outContent.toString() );
+    }
 }

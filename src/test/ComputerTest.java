@@ -48,9 +48,12 @@ public class ComputerTest {
     public void lazyComputerSelectsFirstOpenCell() throws Exception {
         board.setCell('X', 0);
         board.setCell('O', 1);
-        computer.lazyComputer();
-        assertEquals('X', board.getCell(2));
+
+        assertEquals(2, computer.lazyComputer());
     }
+
+
+
     @Test
     public void getOpponentTest(){
         assertEquals('O', computer.getOpponent('X') );

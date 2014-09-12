@@ -1,6 +1,6 @@
 package main;
 
-import java.io.Console;
+import java.io.IOException;
 
 /**
  * Created by Nayshins on 9/10/14.
@@ -16,8 +16,32 @@ public class HumanPlayer extends Player {
     public void makeMove(int index) throws Exception {
         board.setCell(marker, index);
     }
-    public int selectMove() {
-        return 1;
+
+    public void selectMove() throws IOException {
+        boolean validMove = false;
+
+        console.movePrompt();
+        while (!validMove) {
+            String input = console.getInput();
+            if (validateMove(input)){
+                int move = Integer.parseInt(input);
+                move -= 1;
+                try {
+                    validMove = true;
+                    makeMove(move);
+                } catch (Exception cellOccupied){
+                    validMove = false;
+                    console.spaceOccupied();
+                }
+            }
+
+        }
     }
 
+    public boolean validateMove(String input){
+        if (input.matches("[1-9]")){
+            return true;
+        }
+        return false;
+    }
 }

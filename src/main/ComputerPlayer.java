@@ -24,9 +24,9 @@ public class ComputerPlayer extends Player {
         board.setCell(marker, index);
     }
 
-    public void lazyComputer() throws Exception {
+    public int lazyComputer() throws Exception {
        int first = board.getEmpty().get(0);
-       makeMove(first);
+       return first;
     }
 
     public char getOpponent(char marker){

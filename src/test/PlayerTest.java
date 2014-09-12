@@ -4,6 +4,12 @@ import main.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static org.junit.Assert.*;
 
 /**
@@ -12,7 +18,7 @@ import static org.junit.Assert.*;
 public class PlayerTest {
     private Board board;
     private Player player;
-    private ConsoleUi console;
+    private MockConsole console;
 
     @Before
     public void setUp() {
@@ -48,6 +54,33 @@ public class PlayerTest {
 
     @Test
     public void testSelectMove() throws Exception {
-        assertEquals(1, player.selectMove());
+
+        Queue<String> inputQueue = new LinkedList<String>();
+        inputQueue.add("1");
+        console.setInput(inputQueue);
+        player.selectMove();
+        assertTrue(console.isSolicitedInput());
+        assertEquals('X', board.getCell(0));
+    }
+
+    @Test
+    public void testSelectMoveWithSpaceOccupiedInput() throws Exception {
+        board.setCell('O', 2);
+        Queue<String> inputQueue = new LinkedList<String>();
+        inputQueue.add("A");
+        inputQueue.add("3");
+        inputQueue.add("4");
+        console.setInput(inputQueue);
+        player.selectMove();
+        assertEquals('O', board.getCell(2));
+        assertTrue(console.wasInputWarningSent());
+        assertEquals('X', board.getCell(3));
+    }
+
+    @Test
+    public void validateMoveTest(){
+        assertTrue(player.validateMove("1"));
+        assertFalse(player.validateMove("11"));
+        assertFalse(player.validateMove("A"));
     }
 }
