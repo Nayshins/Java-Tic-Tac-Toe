@@ -3,6 +3,11 @@ package test;
 import main.*;
 
 import org.junit.Test;
+
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static org.junit.Assert.*;
 
 /**
@@ -10,15 +15,18 @@ import static org.junit.Assert.*;
  */
 public class GameTest {
     @Test
-    public void doesNothingWhenTheGameIsStopped() {
+    public void runsOnceWhileGameOverFalse() {
         Rules testRules = new MockRules();
         Board board = new Board();
-        ConsoleUi console = new ConsoleUi();
+        MockConsole console = new MockConsole();
         Player player1 = new MockPlayer('X', board);
         Player player2 = new MockPlayer('O', board);
         Game game = new Game(console, testRules, board, player1, player2 );
-        testRules.setGameOver(true);
-        game.gameLoop();
-        assertTrue(testRules.gameOver(board));
+        Queue<Boolean> gameOverQueue = new LinkedList<Boolean>();
+        gameOverQueue.add(false);
+        gameOverQueue.add(true);
+        testRules.setGameOverQueue(gameOverQueue);
+        game.gameLoop(player1);
+        assertTrue(console.isWelcomed());
     }
 }

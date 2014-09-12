@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * Created by Nayshins on 9/9/14.
  */
-public class ConsoleUi {
+public class ConsoleUi implements UI {
     public void print(String string) {
         System.out.println(string);
     }
@@ -21,4 +21,5 @@ public class ConsoleUi {
         String input = reader.readLine();
         return input;
     }
+
 }

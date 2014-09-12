@@ -1,12 +1,13 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 /**
  * Created by Nayshins on 9/10/14.
  */
 public class MockRules extends GameRules {
-    private boolean isGameOver;
+    public Queue<Boolean> gameOverQueue;
 
     @Override
     public boolean winner(ArrayList<char[]> solutions) {
@@ -20,10 +21,13 @@ public class MockRules extends GameRules {
 
     @Override
     public boolean gameOver(Board board) {
-        return isGameOver;
+        return isGameOver();
     }
-
-    public void setGameOver(boolean isGameOver) {
-        this.isGameOver = isGameOver;
+    @Override
+    public boolean isGameOver() {
+        return gameOverQueue.remove();
+    }
+    public void setGameOverQueue(Queue<Boolean> queue){
+        this.gameOverQueue = queue;
     }
 }
