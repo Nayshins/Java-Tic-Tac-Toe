@@ -43,4 +43,13 @@ public abstract class Player {
 
         return 0;
     }
+
+    public boolean getMoveMade(){
+        return false;
+    };
+
+    public int selectMove() {
+
+        return 0;
+    }
 }

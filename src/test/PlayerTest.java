@@ -1,8 +1,6 @@
 package test;
 
-import main.Board;
-import main.HumanPlayer;
-import main.Player;
+import main.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,15 +12,18 @@ import static org.junit.Assert.*;
 public class PlayerTest {
     private Board board;
     private Player player;
+    private ConsoleUi console;
 
     @Before
     public void setUp() {
         this.board = new Board();
-        this.player = new HumanPlayer('X', board);
+        this.console = new MockConsole(board);
+        this.player = new HumanPlayer('X', board, console);
     }
     @After
     public void tearDown() {
         this.board = null;
+        this.console = null;
         this.player = null;
     }
 
@@ -43,5 +44,10 @@ public class PlayerTest {
     public void makeMoveOnOccupiedCell() throws Exception {
         board.setCell('X', 0);
         player.makeMove(0);
+    }
+
+    @Test
+    public void testSelectMove() throws Exception {
+        assertEquals(1, player.selectMove());
     }
 }

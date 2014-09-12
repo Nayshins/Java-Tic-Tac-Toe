@@ -7,7 +7,7 @@ import java.util.Queue;
  * Created by Nayshins on 9/10/14.
  */
 public class MockRules extends GameRules {
-    public Queue<Boolean> gameOverQueue;
+    private Queue<Boolean> gameOverQueue;
 
     @Override
     public boolean winner(ArrayList<char[]> solutions) {

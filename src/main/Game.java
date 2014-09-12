@@ -17,12 +17,12 @@ public class Game {
         this.player2 = player2;
     }
 
-    public void gameLoop(Player player) {
-        Player currentPlayer = player;
+    public void gameLoop() {
+        Player currentPlayer = player1;
         console.welcome();
         while (!rules.gameOver(board)){
             if (currentPlayer instanceof HumanPlayer){
-
+                
             }
         }
     }

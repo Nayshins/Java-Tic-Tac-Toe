@@ -8,6 +8,10 @@ import java.io.IOException;
 public class MockConsole extends ConsoleUi {
     private boolean welcomed = false;
 
+    public MockConsole(Board board) {
+        super(board);
+    }
+
 
     @Override
     public void print(String string) {
