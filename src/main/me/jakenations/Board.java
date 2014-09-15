@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,6 @@ import java.util.Arrays;
  * Created by Nayshins on 9/8/14.
  */
 public class Board {
-
 
     private char[] grid = new char[]{' ',' ',' ',' ',' ',' ',' ',' ',' '};
 
@@ -40,12 +39,15 @@ public class Board {
     public ArrayList<Integer> getEmpty() {
         ArrayList<Integer> emptyLocations = new ArrayList<Integer>();
         for (int i = 0; i < grid.length; i++) {
-//          Check if char is empty value
-            if (grid[i] == ' ') {
-                emptyLocations.add(i);
-            }
+            checkIfCharIsEmpty(emptyLocations, i);
         }
         return emptyLocations;
+    }
+
+    private void checkIfCharIsEmpty(ArrayList<Integer> emptyLocations, int i) {
+        if (grid[i] == ' ') {
+            emptyLocations.add(i);
+        }
     }
 
     public ArrayList<char[]> makeRows() {

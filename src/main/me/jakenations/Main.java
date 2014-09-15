@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 public class Main {
 

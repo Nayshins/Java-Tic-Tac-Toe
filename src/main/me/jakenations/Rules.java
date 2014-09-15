@@ -1,7 +1,6 @@
-package main;
+package me.jakenations;
 
 import java.util.ArrayList;
-import java.util.Queue;
 
 /**
  * Created by Nayshins on 9/8/14.

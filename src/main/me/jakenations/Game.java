@@ -1,6 +1,4 @@
-package main;
-
-import java.io.IOException;
+package me.jakenations;
 
 /**
  * Created by Nayshins on 9/9/14.
@@ -37,15 +35,16 @@ public class Game {
                 console.computerMove();
                 currentPlayer.makeMove(currentPlayer.unbeatableComputer());
             }
+
             console.printBoard();
             switchPlayers();
         }
         if (!rules.isDraw()){
            switchPlayers();
             console.winner(currentPlayer.getMarker());
+        } else {
+            console.draw();
         }
-        console.draw();
-
     }
 
 

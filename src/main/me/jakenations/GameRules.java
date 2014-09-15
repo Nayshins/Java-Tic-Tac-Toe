@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 import java.util.ArrayList;
 

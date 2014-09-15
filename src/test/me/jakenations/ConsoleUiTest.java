@@ -1,15 +1,12 @@
-package test;
+package me.jakenations;
 
-import main.Board;
-import main.ConsoleUi;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
-import java.util.Scanner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Nayshins on 9/9/14.
@@ -20,7 +17,7 @@ public class ConsoleUiTest {
     private Board board;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         System.setOut(new PrintStream(outContent));
         this.board = new Board();
         this.console = new ConsoleUi(board);
@@ -32,12 +29,14 @@ public class ConsoleUiTest {
         this.board = null;
         this.console = null;
     }
+
     @Test
     public void printToConsoleTest() {
 
         console.print("hello");
         assertEquals("hello\n", outContent.toString());
     }
+
     @Test
     public void getStandardInput() throws IOException {
         String input = "Test input";
@@ -49,11 +48,13 @@ public class ConsoleUiTest {
             System.setIn(stdin);
         }
     }
+
     @Test
     public void welcomeTest() {
         console.welcome();
         assertEquals("Welcome to Tic Tac Toe\n", outContent.toString());
     }
+
     @Test
     public void movePromptTest() {
         console.movePrompt();
@@ -66,10 +67,10 @@ public class ConsoleUiTest {
         console.printBoard();
         String boardString =
                 " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2) + "\n" +
-                "---+---+---\n" +
-                " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
-                "---+---+---\n" +
-                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) + "\n\n";
+                        "---+---+---\n" +
+                        " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
+                        "---+---+---\n" +
+                        " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) + "\n\n";
         assertEquals(boardString, outContent.toString());
 
     }
@@ -82,10 +83,10 @@ public class ConsoleUiTest {
     }
 
     @Test
-    public void testPrintsWinner(){
+    public void testPrintsWinner() {
         char marker = 'X';
         console.winner(marker);
-        assertEquals("X is the winner!\n", outContent.toString() );
+        assertEquals("X is the winner!\n", outContent.toString());
     }
 
     @Test

@@ -1,6 +1,4 @@
-package main;
-
-import java.util.Queue;
+package me.jakenations;
 
 /**
  * Created by Nayshins on 9/12/14.

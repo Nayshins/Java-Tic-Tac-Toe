@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 /**
  * Created by Nayshins on 9/10/14.

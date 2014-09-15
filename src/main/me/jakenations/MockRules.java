@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 import java.util.ArrayList;
 import java.util.Queue;
@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * Created by Nayshins on 9/10/14.
  */
-public class MockRules extends GameRules {
+public class MockRules implements Rules {
     private Queue<Boolean> gameOverQueue;
 
     @Override
@@ -23,6 +23,17 @@ public class MockRules extends GameRules {
     public boolean gameOver(Board board) {
         return isGameOver();
     }
+
+    @Override
+    public boolean winTest(char marker, ArrayList<char[]> chars) {
+        return false;
+    }
+
+    @Override
+    public boolean isDraw() {
+        return false;
+    }
+
     public boolean isGameOver() {
         return gameOverQueue.remove();
     }

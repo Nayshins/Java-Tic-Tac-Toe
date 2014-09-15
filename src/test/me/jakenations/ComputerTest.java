@@ -1,12 +1,9 @@
-package test;
+package me.jakenations;
 
-import main.Board;
-import main.ComputerPlayer;
-import main.GameRules;
-import main.Player;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -21,7 +18,7 @@ public class ComputerTest {
     public void setUp() {
         this.board = new Board();
         this.rules = new GameRules();
-        this.computer = new ComputerPlayer('X', board,rules);
+        this.computer = new ComputerPlayer('X', board, rules);
     }
 
     @After
@@ -33,17 +30,20 @@ public class ComputerTest {
 
     @Test
     public void computerMarkerTest() {
-        assertEquals('X',computer.getMarker());
+        assertEquals('X', computer.getMarker());
     }
+
     @Test
     public void computerHasBoard() {
-        assertEquals(board,computer.getBoard());
+        assertEquals(board, computer.getBoard());
     }
+
     @Test
     public void computerMakesMove() throws Exception {
         computer.makeMove(0);
         assertEquals('X', board.getCell(0));
     }
+
     @Test
     public void lazyComputerSelectsFirstOpenCell() throws Exception {
         board.setCell('X', 0);
@@ -53,29 +53,32 @@ public class ComputerTest {
     }
 
 
-
     @Test
-    public void getOpponentTest(){
-        assertEquals('O', computer.getOpponent('X') );
+    public void getOpponentTest() {
+        assertEquals('O', computer.getOpponent('X'));
     }
+
     @Test
     public void boardScoreReturns1ForWin() throws Exception {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertEquals(1,computer.boardScore('X'), .01);
+        assertEquals(1, computer.boardScore('X'), .01);
     }
+
     @Test
-    public void boardScoreReturnsNegativeForLoss() throws Exception{
+    public void boardScoreReturnsNegativeForLoss() throws Exception {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('O', 2);
-        assertEquals(-1,computer.boardScore('X'), .01);
+        assertEquals(-1, computer.boardScore('X'), .01);
     }
+
     @Test
     public void returnsZeroIfNoWinner() {
-        assertEquals(0,computer.boardScore('X'), .01);
+        assertEquals(0, computer.boardScore('X'), .01);
     }
+
     @Test
     public void negamaxReturnsZeroForDrawAndMarker() throws Exception {
         board.setCell('O', 0);
@@ -87,8 +90,9 @@ public class ComputerTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(0, computer.negamax('X',1),0.01);
+        assertEquals(0, computer.negamax('X', 1), 0.01);
     }
+
     @Test
     public void negamaxReturnsOneForWin() throws Exception {
         board.setCell('O', 0);
@@ -100,8 +104,9 @@ public class ComputerTest {
         board.setCell('X', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(1, computer.negamax('X', 1),0.01);
+        assertEquals(1, computer.negamax('X', 1), 0.01);
     }
+
     @Test
     public void negamaxReturnsNegativeOneForLoss() throws Exception {
         board.setCell('O', 0);
@@ -113,8 +118,9 @@ public class ComputerTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(-1, computer.negamax('X', 1),0.01);
+        assertEquals(-1, computer.negamax('X', 1), 0.01);
     }
+
     @Test
     public void negamaxReturnsOneWhenWinningMove() throws Exception {
         board.setCell('O', 0);
@@ -124,8 +130,9 @@ public class ComputerTest {
         board.setCell('O', 5);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(1, computer.negamax('X', 0),0.01);
+        assertEquals(1, computer.negamax('X', 0), 0.01);
     }
+
     @Test
     public void negamaxReturnsZeroWhenLosing() throws Exception {
         board.setCell('O', 0);
@@ -136,8 +143,9 @@ public class ComputerTest {
         board.setCell('O', 5);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(0, computer.negamax('O',0),0.01);
+        assertEquals(0, computer.negamax('O', 0), 0.01);
     }
+
     @Test
     public void unbeatableComputerReturnsCellThatMakesThreeInARow() throws Exception {
         board.setCell('O', 2);
@@ -146,6 +154,7 @@ public class ComputerTest {
         board.setCell('X', 3);
         assertEquals(6, computer.unbeatableComputer());
     }
+
     @Test
     public void blocksOpponentThreeInARow() throws Exception {
         board.setCell('O', 0);
@@ -153,6 +162,7 @@ public class ComputerTest {
         board.setCell('X', 6);
         assertEquals(1, computer.unbeatableComputer());
     }
+
     @Test
     public void winsGameInsteadOfBlocking() throws Exception {
         board.setCell('O', 0);
@@ -161,6 +171,7 @@ public class ComputerTest {
         board.setCell('X', 8);
         assertEquals(7, computer.unbeatableComputer());
     }
+
     @Test
     public void completesThreeInARowInsteadOfATie() throws Exception {
         board.setCell('X', 0);

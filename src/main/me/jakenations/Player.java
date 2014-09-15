@@ -1,4 +1,4 @@
-package main;
+package me.jakenations;
 
 import java.io.IOException;
 
@@ -26,10 +26,6 @@ public abstract class Player {
         return board;
     }
 
-    public int lazyComputer() throws Exception{
-        return 0;
-    }
-
     public char getOpponent(char marker) {
         return 0;
     }
@@ -42,9 +38,10 @@ public abstract class Player {
         return 0;
     }
 
-
+    public int lazyComputer() throws Exception{
+        return 0;
+    }
     public int unbeatableComputer() throws Exception {
-
         return 0;
     }
 

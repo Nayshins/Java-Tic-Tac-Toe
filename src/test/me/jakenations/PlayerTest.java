@@ -1,12 +1,9 @@
-package test;
+package me.jakenations;
 
-import main.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -26,6 +23,7 @@ public class PlayerTest {
         this.console = new MockConsole(board);
         this.player = new HumanPlayer('X', board, console);
     }
+
     @After
     public void tearDown() {
         this.board = null;
@@ -34,18 +32,21 @@ public class PlayerTest {
     }
 
     @Test
-    public void playerHasMarker() throws Exception{
+    public void playerHasMarker() throws Exception {
         assertEquals('X', player.getMarker());
     }
+
     @Test
-    public void playerHasBoard() throws Exception{
+    public void playerHasBoard() throws Exception {
         assertEquals(board, player.getBoard());
     }
+
     @Test
-    public void successfulMakeMove() throws Exception{
+    public void successfulMakeMove() throws Exception {
         player.makeMove(0);
         assertEquals('X', board.getCell(0));
     }
+
     @Test(expected = Exception.class)
     public void makeMoveOnOccupiedCell() throws Exception {
         board.setCell('X', 0);
@@ -78,7 +79,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void validateMoveTest(){
+    public void validateMoveTest() {
         assertTrue(player.validateMove("1"));
         assertFalse(player.validateMove("11"));
         assertFalse(player.validateMove("A"));

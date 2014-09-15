@@ -1,10 +1,7 @@
-package test;
-
-import main.*;
+package me.jakenations;
 
 import org.junit.Test;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,7 +20,7 @@ public class GameTest {
         MockPlayer player1 = new MockPlayer('X', board, console);
         MockComputer player2 = new MockComputer('O', board, testRules);
 
-        Game game = new Game(console, testRules, board, player1, player2 );
+        Game game = new Game(console, testRules, board, player1, player2);
 
         Queue<String> inputQueue = new LinkedList<String>();
         inputQueue.add("A");
@@ -53,7 +50,7 @@ public class GameTest {
         Player player1 = new MockPlayer('X', board, console);
         Player player2 = new MockPlayer('O', board, console);
 
-        Game game = new Game(console, testRules, board, player1, player2 );
+        Game game = new Game(console, testRules, board, player1, player2);
 
         game.setCurrentPlayer(player1);
         game.switchPlayers();
