@@ -23,7 +23,6 @@ public class MockRules extends GameRules {
     public boolean gameOver(Board board) {
         return isGameOver();
     }
-    @Override
     public boolean isGameOver() {
         return gameOverQueue.remove();
     }

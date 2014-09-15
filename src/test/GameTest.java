@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 public class GameTest {
     @Test
     public void runsOnceWhileGameOverFalse() throws Exception {
-        Rules testRules = new MockRules();
+        MockRules testRules = new MockRules();
         Board board = new Board();
         MockConsole console = new MockConsole(board);
 

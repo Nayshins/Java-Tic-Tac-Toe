@@ -93,4 +93,11 @@ public class ConsoleUiTest {
         console.computerMove();
         assertEquals("Computer is making it's move\n", outContent.toString());
     }
+
+    @Test
+    public void testDraw() throws Exception {
+        console.draw();
+        assertEquals("Game ended in a draw!\n", outContent.toString());
+
+    }
 }
