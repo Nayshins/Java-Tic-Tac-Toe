@@ -57,7 +57,7 @@ public class ComputerPlayer implements Player {
             for (int move : board.getEmpty()){
                 board.setCell(marker,move);
                 float score = -negamax(opponent, depth + 1);
-                board.undoMove(move);
+                undoMove(move);
                 if (score > bestScore){
                     bestScore = score;
                 }
@@ -72,13 +72,17 @@ public class ComputerPlayer implements Player {
         for (int move : board.getEmpty()){
             board.setCell(marker,move);
             float score = -negamax(opponent, 1);
-            board.undoMove(move);
+            undoMove(move);
             if (score > bestScore){
                 bestScore = score;
                 bestMove = move;
             }
         }
         return bestMove;
+    }
+
+    private void undoMove(int move){
+        board.undoCell(move);
     }
 
 }

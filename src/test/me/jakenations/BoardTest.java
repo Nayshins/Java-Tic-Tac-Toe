@@ -140,7 +140,7 @@ public class BoardTest {
     @Test
     public void undoCellTest() throws Exception {
         board.setCell('X', 0);
-        board.undoMove(0);
+        board.undoCell(0);
         assertEquals(' ', board.getCell(0));
     }
 }

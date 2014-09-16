@@ -87,7 +87,11 @@ public class Board {
         }
     }
 
-    public void undoMove(int index) {
-        grid[index] = ' ';
+    public char getEmptyChar(){
+        return empty;
+    }
+
+    public void undoCell(int index) {
+        grid[index] = empty;
     }
 }
