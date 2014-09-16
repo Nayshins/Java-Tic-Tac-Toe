@@ -3,11 +3,11 @@ package me.jakenations;
 import java.io.IOException;
 
 public class HumanPlayer implements Player {
-    private ConsoleUi console;
+    private UI console;
     private Board board;
     private char marker;
 
-    public HumanPlayer(char marker, Board board, ConsoleUi console) {
+    public HumanPlayer(char marker, Board board, UI console) {
         this.console = console;
         this.board = board;
         this.marker = marker;

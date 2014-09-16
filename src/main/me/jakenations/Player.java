@@ -8,5 +8,7 @@ public interface Player {
 
     public void makeMove(int index) throws Exception;
 
-    public void selectMove() throws IOException;
+    public void selectMove() throws Exception;
+
+
 }

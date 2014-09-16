@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class ComputerTest {
     private Board board;
-    private Player computer;
+    private ComputerPlayer computer;
     private GameRules rules;
 
     @Before

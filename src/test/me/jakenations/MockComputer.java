@@ -1,14 +1,21 @@
 package me.jakenations;
 
-/**
- * Created by Nayshins on 9/12/14.
- */
-public class MockComputer extends ComputerPlayer{
+public class MockComputer implements Player{
     public boolean moveMade = false;
     public int indexOfMove;
+    private Board board;
+    private Rules rules;
+    private char marker;
 
     public MockComputer(char marker, Board board, Rules rules) {
-        super(marker, board, rules);
+        this.marker = marker;
+        this.board = board;
+        this.rules = rules;
+    }
+
+    @Override
+    public char getMarker() {
+        return 0;
     }
 
     @Override
@@ -20,8 +27,14 @@ public class MockComputer extends ComputerPlayer{
         return moveMade;
     }
 
-    public int unbeatableComputer() throws Exception {
-        return lazyComputer();
+     public int lazyComputer() throws Exception {
+        int first = board.getEmpty().get(0);
+        return first;
+    }
+
+
+    public void selectMove() throws Exception {
+        makeMove(lazyComputer());
     }
 
 }

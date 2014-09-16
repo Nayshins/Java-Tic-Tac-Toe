@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  */
 public class PlayerTest {
     private Board board;
-    private Player player;
+    private HumanPlayer player;
     private MockConsole console;
 
     @Before
@@ -36,10 +36,6 @@ public class PlayerTest {
         assertEquals('X', player.getMarker());
     }
 
-    @Test
-    public void playerHasBoard() throws Exception {
-        assertEquals(board, player.getBoard());
-    }
 
     @Test
     public void successfulMakeMove() throws Exception {

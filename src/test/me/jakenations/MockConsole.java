@@ -6,16 +6,16 @@ import java.util.Queue;
 /**
  * Created by Nayshins on 9/10/14.
  */
-public class MockConsole extends ConsoleUi {
+public class MockConsole implements UI {
     private boolean welcomed = false;
     private boolean solicitedInput = false;
     private Queue<String> inputs;
     private boolean inputWarningSent = false;
     private boolean boardPrinted = false;
-
+    private Board board;
 
     public MockConsole(Board board) {
-        super(board);
+        this.board = board;
     }
 
 
@@ -31,7 +31,6 @@ public class MockConsole extends ConsoleUi {
     @Override
     public String getInput() throws IOException {
         return inputs.remove();
-//          return "1";
     }
 
     public void movePrompt() {
@@ -53,10 +52,25 @@ public class MockConsole extends ConsoleUi {
         boardPrinted = true;
     }
 
+    @Override
+    public void winner(char marker) {
+
+    }
+
+    @Override
+    public void draw() {
+
+    }
+
 
     @Override
     public void spaceOccupied() {
         inputWarningSent = true;
+    }
+
+    @Override
+    public void invalidInput() {
+
     }
 
     public boolean wasInputWarningSent() {

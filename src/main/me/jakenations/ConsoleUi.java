@@ -45,7 +45,7 @@ public class ConsoleUi implements UI {
         print("Space already filled please choose another");
     }
 
-    public void winner(Character marker) {
+    public void winner(char marker) {
         print(marker + " is the winner!");
     }
 

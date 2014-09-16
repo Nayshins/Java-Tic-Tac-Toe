@@ -1,7 +1,7 @@
 package me.jakenations;
 
 public class Game {
-    private ConsoleUi console;
+    private UI console;
     private Rules rules;
     private Board board;
     private Player player1;
@@ -13,7 +13,7 @@ public class Game {
     }
 
 
-    public Game(ConsoleUi console, Rules rules, Board board, Player player1, Player player2) {
+    public Game(UI console, Rules rules, Board board, Player player1, Player player2) {
         this.console = console;
         this.rules = rules;
         this.board = board;
