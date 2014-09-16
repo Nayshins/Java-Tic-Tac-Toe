@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Board3x3 implements Board{
-        private final char empty = ' ';
+    private static final char EMPTY = ' ';
 
-    private char[] grid = new char[]{empty, empty, empty, empty, empty, empty, empty, empty, empty};
+    private char[] grid = new char[]{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY};
 
     public char[] getGrid() {
         return grid;
@@ -43,7 +43,7 @@ public class Board3x3 implements Board{
     }
 
     private void checkIfCharIsEmpty(ArrayList<Integer> emptyLocations, int i) {
-        if (grid[i] == empty) {
+        if (grid[i] == EMPTY) {
             emptyLocations.add(i);
         }
     }
@@ -80,10 +80,10 @@ public class Board3x3 implements Board{
     }
 
     public boolean cellOccupied(int index) {
-        return grid[index] != empty;
+        return grid[index] != EMPTY;
     }
 
     public void undoCell(int index) {
-        grid[index] = empty;
+        grid[index] = EMPTY;
     }
 }
