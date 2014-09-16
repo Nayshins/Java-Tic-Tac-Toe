@@ -13,12 +13,12 @@ public class MockRules implements Rules {
     }
 
     @Override
-    public boolean draw(ArrayList<Integer> empties) {
+    public boolean draw() {
         return false;
     }
 
     @Override
-    public boolean gameOver(Board board) {
+    public boolean gameOver( ) {
         return isGameOver();
     }
 

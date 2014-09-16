@@ -4,11 +4,16 @@ import java.util.ArrayList;
 
 public class GameRules implements Rules {
 
-    public boolean isDraw() {
-        return isDraw;
+    private Board board;
+
+    public GameRules(Board board) {
+        this.board = board;
     }
 
-    private boolean isDraw = false;
+    public boolean isDraw() {
+        return draw();
+    }
+
 
     public boolean winner(ArrayList<char[]> solutions) {
         for (char[] solution : solutions) {
@@ -22,18 +27,17 @@ public class GameRules implements Rules {
         return false;
     }
 
-    public boolean draw(ArrayList<Integer> empties) {
-        if (empties.size() == 0){
+    public boolean draw() {
+        if (board.getEmpty().size() == 0){
             return true;
         }
         return false;
     }
 
-    public boolean gameOver(Board board) {
+    public boolean gameOver() {
         if (winner(board.makeSolutions())) {
             return true;
-        } else if (draw(board.getEmpty())){
-            isDraw = true;
+        } else if (draw()){
             return true;
         }
         return false;

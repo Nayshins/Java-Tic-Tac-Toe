@@ -47,7 +47,7 @@ public class ComputerPlayer implements Player {
     public float negamax(char marker, int depth) throws Exception {
         char opponent = getOpponent(marker);
         float bestScore = Integer.MIN_VALUE;
-        if (rules.gameOver(board)){
+        if (rules.gameOver()){
             return boardScore(marker) / depth;
         } else {
             for (int move : board.getEmpty()){

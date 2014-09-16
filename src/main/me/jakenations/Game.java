@@ -25,7 +25,7 @@ public class Game {
     public void gameLoop() throws Exception {
         console.welcome();
         console.printBoard();
-        while (!rules.gameOver(board)){
+        while (!rules.gameOver()){
             currentPlayer.selectMove();
             console.printBoard();
             switchPlayers();
@@ -33,7 +33,7 @@ public class Game {
         gameOverHandler();
     }
 
-    private void gameOverHandler() {
+    public void gameOverHandler() {
         if (rules.isDraw()){
             console.draw();
         } else {

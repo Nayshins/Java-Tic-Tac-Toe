@@ -10,7 +10,8 @@ public class MockConsole implements UI {
     private Queue<String> inputs;
     private boolean inputWarningSent = false;
     private boolean boardPrinted = false;
-
+    public boolean isWinner = false;
+    public boolean isDraw = false;
 
     public void welcome() {
         welcomed = true;
@@ -42,12 +43,12 @@ public class MockConsole implements UI {
 
     @Override
     public void winner(char marker) {
-
+        isWinner = true;
     }
 
     @Override
     public void draw() {
-
+        isDraw = true;
     }
 
 

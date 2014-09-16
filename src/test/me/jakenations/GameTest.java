@@ -39,6 +39,8 @@ public class GameTest {
         assertTrue(player2.getMoveMade());
     }
 
+
+
     @Test
     public void testSwitchPlayers() throws Exception {
         Rules testRules = new MockRules();

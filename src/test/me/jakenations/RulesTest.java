@@ -14,7 +14,7 @@ public class RulesTest {
     @Before
     public void setUp() {
         this.board = new Board3x3();
-        this.rules = new GameRules();
+        this.rules = new GameRules(board);
     }
 
     @After
@@ -55,17 +55,17 @@ public class RulesTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('O', 8);
-        assertTrue("Returns true when there is a draw", rules.draw(board.getEmpty()));
+        assertTrue("Returns true when there is a draw", rules.draw());
     }
 
     @Test
     public void noDrawTest() throws Exception {
-        assertFalse("Returns false when there is not a draw", rules.draw(board.getEmpty()));
+        assertFalse("Returns false when there is not a draw", rules.draw());
     }
 
     @Test
     public void noGameOverTest() throws Exception {
-        assertFalse("Return false when there is no winner", rules.gameOver(board));
+        assertFalse("Return false when there is no winner", rules.gameOver());
     }
 
     @Test
@@ -73,7 +73,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue("Return true when the game is won", rules.gameOver(board));
+        assertTrue("Return true when the game is won", rules.gameOver());
         assertFalse(rules.isDraw());
     }
 
@@ -88,7 +88,7 @@ public class RulesTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('O', 8);
-        assertTrue("Return true when the game ends in a draw", rules.gameOver(board));
+        assertTrue("Return true when the game ends in a draw", rules.gameOver());
         assertTrue(rules.isDraw());
     }
 

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 	    Board board = new Board3x3();
-        Rules rules = new GameRules();
+        Rules rules = new GameRules(board);
 
         UI console = new ConsoleUi(board);
         Player player = new HumanPlayer('X', board, console);
