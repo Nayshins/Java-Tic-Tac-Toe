@@ -3,12 +3,10 @@ package me.jakenations;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by Nayshins on 9/8/14.
- */
 public class Board {
+    private final char empty = ' ';
 
-    private char[] grid = new char[]{' ',' ',' ',' ',' ',' ',' ',' ',' '};
+    private char[] grid = new char[]{empty, empty, empty, empty, empty, empty, empty, empty, empty};
 
     public char[] getGrid() {
         return grid;
@@ -45,7 +43,7 @@ public class Board {
     }
 
     private void checkIfCharIsEmpty(ArrayList<Integer> emptyLocations, int i) {
-        if (grid[i] == ' ') {
+        if (grid[i] == empty) {
             emptyLocations.add(i);
         }
     }
@@ -82,7 +80,7 @@ public class Board {
     }
 
     public boolean cellOccupied(int index) {
-        if (grid[index] != ' '){
+        if (grid[index] != empty){
             return true;
         } else {
             return false;
