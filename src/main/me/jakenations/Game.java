@@ -1,8 +1,5 @@
 package me.jakenations;
 
-/**
- * Created by Nayshins on 9/9/14.
- */
 public class Game {
     private ConsoleUi console;
     private Rules rules;
@@ -33,6 +30,10 @@ public class Game {
             console.printBoard();
             switchPlayers();
         }
+        gameOverHandler();
+    }
+
+    private void gameOverHandler() {
         if (!rules.isDraw()){
            switchPlayers();
             console.winner(currentPlayer.getMarker());
