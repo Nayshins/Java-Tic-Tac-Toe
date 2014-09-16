@@ -74,6 +74,7 @@ public class RulesTest {
         board.setCell('X', 1);
         board.setCell('X', 2);
         assertTrue("Return true when the game is won", rules.gameOver(board));
+        assertFalse(rules.isDraw());
     }
 
     @Test
@@ -88,6 +89,7 @@ public class RulesTest {
         board.setCell('X', 7);
         board.setCell('O', 8);
         assertTrue("Return true when the game ends in a draw", rules.gameOver(board));
+        assertTrue(rules.isDraw());
     }
 
     @Test

@@ -23,9 +23,8 @@ public class GameRules implements Rules {
     }
 
     public boolean draw(ArrayList<Integer> empties) {
-        if (empties.isEmpty()){
-           isDraw = true;
-           return true;
+        if (empties.size() == 0){
+            return true;
         }
         return false;
     }
@@ -34,6 +33,7 @@ public class GameRules implements Rules {
         if (winner(board.makeSolutions())) {
             return true;
         } else if (draw(board.getEmpty())){
+            isDraw = true;
             return true;
         }
         return false;

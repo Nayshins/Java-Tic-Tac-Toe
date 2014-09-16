@@ -34,11 +34,11 @@ public class Game {
     }
 
     private void gameOverHandler() {
-        if (!rules.isDraw()){
-           switchPlayers();
-            console.winner(currentPlayer.getMarker());
-        } else {
+        if (rules.isDraw()){
             console.draw();
+        } else {
+           switchPlayers();
+           console.winner(currentPlayer.getMarker());
         }
     }
 
