@@ -29,13 +29,7 @@ public class Game {
         console.welcome();
         console.printBoard();
         while (!rules.gameOver(board)){
-            if (currentPlayer instanceof HumanPlayer){
-                currentPlayer.selectMove();
-            } else if(currentPlayer instanceof ComputerPlayer) {
-                console.computerMove();
-                currentPlayer.makeMove(currentPlayer.unbeatableComputer());
-            }
-
+            currentPlayer.selectMove();
             console.printBoard();
             switchPlayers();
         }
