@@ -16,7 +16,7 @@ public class ConsoleUiTest {
     @Before
     public void setUp() {
         System.setOut(new PrintStream(outContent));
-        this.board = new Board();
+        this.board = new Board3x3();
         this.console = new ConsoleUi(board);
     }
 

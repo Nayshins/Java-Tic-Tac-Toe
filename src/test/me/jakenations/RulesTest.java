@@ -13,7 +13,7 @@ public class RulesTest {
 
     @Before
     public void setUp() {
-        this.board = new Board();
+        this.board = new Board3x3();
         this.rules = new GameRules();
     }
 

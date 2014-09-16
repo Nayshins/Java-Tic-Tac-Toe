@@ -16,7 +16,7 @@ public class PlayerTest {
 
     @Before
     public void setUp() {
-        this.board = new Board();
+        this.board = new Board3x3();
         this.console = new MockConsole(board);
         this.player = new HumanPlayer('X', board, console);
     }

@@ -14,7 +14,7 @@ public class ComputerTest {
 
     @Before
     public void setUp() {
-        this.board = new Board();
+        this.board = new Board3x3();
         this.rules = new GameRules();
         this.computer = new ComputerPlayer('X', board, rules);
     }

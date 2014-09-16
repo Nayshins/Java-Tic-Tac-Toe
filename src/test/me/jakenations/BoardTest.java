@@ -14,7 +14,7 @@ public class BoardTest {
 
     @Before
     public void setup() {
-        this.board = new Board();
+        this.board = new Board3x3();
     }
 
     @After

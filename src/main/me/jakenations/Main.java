@@ -3,7 +3,7 @@ package me.jakenations;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-	    Board board = new Board();
+	    Board board = new Board3x3();
         Rules rules = new GameRules();
 
         UI console = new ConsoleUi(board);
