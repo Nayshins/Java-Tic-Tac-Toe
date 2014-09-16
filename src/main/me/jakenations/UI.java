@@ -3,7 +3,6 @@ package me.jakenations;
 import java.io.IOException;
 
 public interface UI {
-    public void print(String string);
 
     public void welcome();
 

@@ -10,17 +10,7 @@ public class MockConsole implements UI {
     private Queue<String> inputs;
     private boolean inputWarningSent = false;
     private boolean boardPrinted = false;
-    private Board board;
 
-    public MockConsole(Board board) {
-        this.board = board;
-    }
-
-
-    @Override
-    public void print(String string) {
-
-    }
 
     public void welcome() {
         welcomed = true;

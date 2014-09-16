@@ -3,9 +3,6 @@ package me.jakenations;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by Nayshins on 9/16/14.
- */
 public class Board3x3 implements Board{
         private final char empty = ' ';
 
@@ -83,11 +80,7 @@ public class Board3x3 implements Board{
     }
 
     public boolean cellOccupied(int index) {
-        if (grid[index] != empty){
-            return true;
-        } else {
-            return false;
-        }
+        return grid[index] != empty;
     }
 
     public void undoCell(int index) {
