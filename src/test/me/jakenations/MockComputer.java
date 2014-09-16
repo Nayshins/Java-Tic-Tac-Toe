@@ -18,7 +18,6 @@ public class MockComputer implements Player{
         return 0;
     }
 
-    @Override
     public void makeMove(int index){
         moveMade = true;
         indexOfMove = index;

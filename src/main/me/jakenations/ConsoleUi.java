@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Nayshins on 9/9/14.
- */
 public class ConsoleUi implements UI {
     private Board board;
 

@@ -9,9 +9,6 @@ import java.util.Queue;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Nayshins on 9/8/14.
- */
 public class PlayerTest {
     private Board board;
     private HumanPlayer player;

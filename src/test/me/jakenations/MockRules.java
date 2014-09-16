@@ -3,9 +3,7 @@ package me.jakenations;
 import java.util.ArrayList;
 import java.util.Queue;
 
-/**
- * Created by Nayshins on 9/10/14.
- */
+
 public class MockRules implements Rules {
     private Queue<Boolean> gameOverQueue;
 

@@ -8,9 +8,6 @@ import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Nayshins on 9/9/14.
- */
 public class ConsoleUiTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private ConsoleUi console;

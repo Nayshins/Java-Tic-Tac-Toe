@@ -7,9 +7,7 @@ import java.util.Queue;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Nayshins on 9/9/14.
- */
+
 public class GameTest {
     @Test
     public void runsOnceWhileGameOverFalse() throws Exception {

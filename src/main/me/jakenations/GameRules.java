@@ -2,9 +2,6 @@ package me.jakenations;
 
 import java.util.ArrayList;
 
-/**
- * Created by Nayshins on 9/10/14.
- */
 public class GameRules implements Rules {
 
     public boolean isDraw() {

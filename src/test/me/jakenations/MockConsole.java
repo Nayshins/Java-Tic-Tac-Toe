@@ -3,9 +3,7 @@ package me.jakenations;
 import java.io.IOException;
 import java.util.Queue;
 
-/**
- * Created by Nayshins on 9/10/14.
- */
+
 public class MockConsole implements UI {
     private boolean welcomed = false;
     private boolean solicitedInput = false;

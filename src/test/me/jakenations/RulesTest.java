@@ -7,9 +7,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Nayshins on 9/8/14.
- */
 public class RulesTest {
     Board board;
     Rules rules;

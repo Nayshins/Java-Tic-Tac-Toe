@@ -2,9 +2,6 @@ package me.jakenations;
 
 import java.io.IOException;
 
-/**
- * Created by Nayshins on 9/10/14.
- */
 public class MockPlayer implements Player {
     public boolean moveMade = false;
     public int indexOfMove;
@@ -23,7 +20,6 @@ public class MockPlayer implements Player {
         return 0;
     }
 
-    @Override
     public void makeMove(int index){
         moveMade = true;
         indexOfMove = index;
@@ -50,7 +46,6 @@ public class MockPlayer implements Player {
 
         }
     }
-
         public boolean validateMove(String input){
         if (input.matches("[1-9]")){
             return true;
