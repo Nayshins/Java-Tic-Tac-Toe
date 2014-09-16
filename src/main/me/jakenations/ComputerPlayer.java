@@ -1,14 +1,16 @@
 package me.jakenations;
 
-/**
- * Created by Nayshins on 9/9/14.
- */
-public class ComputerPlayer extends Player {
+import java.io.IOException;
+
+public class ComputerPlayer implements Player {
+    private Board board;
+    private char marker;
     private Rules rules;
 
     public ComputerPlayer(char marker, Board board, Rules rules) {
-        super(marker, board);
+        this.marker = marker;
         this.rules = rules;
+        this.board = board;
     }
 
 
@@ -24,9 +26,13 @@ public class ComputerPlayer extends Player {
         board.setCell(marker, index);
     }
 
+    public void selectMove() throws IOException {
+
+    }
+
     public int lazyComputer() throws Exception {
-       int first = board.getEmpty().get(0);
-       return first;
+        int first = board.getEmpty().get(0);
+        return first;
     }
 
     public char getOpponent(char marker){
@@ -43,27 +49,27 @@ public class ComputerPlayer extends Player {
         return (float) 0.0;
     }
     public float negamax(char marker, int depth) throws Exception {
-       char opponent = getOpponent(marker);
-       float bestScore = Integer.MIN_VALUE;
-       if (rules.gameOver(board)){
-           return boardScore(marker) / depth;
-       } else {
-           for (int move : board.getEmpty()){
-               board.setCell(marker,move);
-               float score = -negamax(opponent, depth + 1);
-               board.undoMove(move);
-               if (score > bestScore){
-                   bestScore = score;
-               }
-           }
-       }
-       return bestScore;
+        char opponent = getOpponent(marker);
+        float bestScore = Integer.MIN_VALUE;
+        if (rules.gameOver(board)){
+            return boardScore(marker) / depth;
+        } else {
+            for (int move : board.getEmpty()){
+                board.setCell(marker,move);
+                float score = -negamax(opponent, depth + 1);
+                board.undoMove(move);
+                if (score > bestScore){
+                    bestScore = score;
+                }
+            }
+        }
+        return bestScore;
     }
     public int unbeatableComputer() throws Exception {
-       char opponent = getOpponent(marker);
-       int bestMove = -1;
-       float bestScore = Integer.MIN_VALUE;
-       for (int move : board.getEmpty()){
+        char opponent = getOpponent(marker);
+        int bestMove = -1;
+        float bestScore = Integer.MIN_VALUE;
+        for (int move : board.getEmpty()){
             board.setCell(marker,move);
             float score = -negamax(opponent, 1);
             board.undoMove(move);
@@ -71,8 +77,8 @@ public class ComputerPlayer extends Player {
                 bestScore = score;
                 bestMove = move;
             }
-       }
-       return bestMove;
+        }
+        return bestMove;
     }
 
 }

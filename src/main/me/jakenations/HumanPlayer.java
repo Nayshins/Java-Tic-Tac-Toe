@@ -2,15 +2,19 @@ package me.jakenations;
 
 import java.io.IOException;
 
-/**
- * Created by Nayshins on 9/10/14.
- */
-public class HumanPlayer extends Player {
+public class HumanPlayer implements Player {
     private ConsoleUi console;
+    private Board board;
+    private char marker;
 
     public HumanPlayer(char marker, Board board, ConsoleUi console) {
-        super(marker, board);
         this.console = console;
+        this.board = board;
+        this.marker = marker;
+    }
+
+    public char getMarker() {
+        return marker;
     }
 
     public void makeMove(int index) throws Exception {
