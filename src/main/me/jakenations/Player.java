@@ -1,7 +1,5 @@
 package me.jakenations;
 
-import java.io.IOException;
-
 public interface Player {
 
     public char getMarker();
