@@ -13,7 +13,7 @@ public class GameTest {
     public void runsOnceWhileGameOverFalse() throws Exception {
         MockRules testRules = new MockRules();
         Board board = new Board3x3();
-        MockConsole console = new MockConsole(board);
+        MockConsole console = new MockConsole();
 
         MockPlayer player1 = new MockPlayer('X', board, console);
         MockComputer player2 = new MockComputer('O', board, testRules);
@@ -43,7 +43,7 @@ public class GameTest {
     public void testSwitchPlayers() throws Exception {
         Rules testRules = new MockRules();
         Board board = new Board3x3();
-        MockConsole console = new MockConsole(board);
+        MockConsole console = new MockConsole();
 
         Player player1 = new MockPlayer('X', board, console);
         Player player2 = new MockPlayer('O', board, console);

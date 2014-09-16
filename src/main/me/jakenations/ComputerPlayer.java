@@ -1,7 +1,5 @@
 package me.jakenations;
 
-import java.io.IOException;
-
 public class ComputerPlayer implements Player {
     private Board board;
     private char marker;
@@ -26,18 +24,16 @@ public class ComputerPlayer implements Player {
         board.setCell(marker, index);
     }
 
-    public void selectMove() throws IOException {
-
+    public void selectMove() throws Exception {
+        makeMove(unbeatableComputer());
     }
 
     public int lazyComputer() throws Exception {
-        int first = board.getEmpty().get(0);
-        return first;
+        return board.getEmpty().get(0);
     }
 
     public char getOpponent(char marker){
-        char opponent = (marker == 'X') ? 'O' : 'X';
-        return opponent;
+        return (marker == 'X') ? 'O' : 'X';
     }
 
     public float boardScore(char marker){
