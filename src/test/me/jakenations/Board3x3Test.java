@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class BoardTest {
+public class Board3x3Test {
     Board board;
 
     @Before
