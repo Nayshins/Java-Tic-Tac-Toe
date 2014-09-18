@@ -23,7 +23,7 @@ public class Console4x4Test {
     public void setUp() {
         System.setOut(new PrintStream(outContent));
         this.board = new Board4x4();
-        this.console = new Console4x4Ui();
+        this.console = new Console4x4UI();
     }
 
     @After
