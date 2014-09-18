@@ -44,18 +44,24 @@ public class ComputerPlayer implements Player {
         }
         return (float) 0.0;
     }
-    public float negamax(char marker, int depth) throws Exception {
+    public float negamax(char marker, int depth, float alpha, float beta) throws Exception {
         char opponent = getOpponent(marker);
         float bestScore = Integer.MIN_VALUE;
-        if (rules.gameOver()){
+        if (rules.gameOver() || depth >= 6){
             return boardScore(marker) / depth;
         } else {
             for (int move : board.getEmpty()){
                 board.setCell(marker,move);
-                float score = -negamax(opponent, depth + 1);
+                float score = -negamax(opponent, depth + 1, -beta, -alpha);
                 undoMove(move);
                 if (score > bestScore){
                     bestScore = score;
+                }
+                if (alpha > score){
+                    alpha = score;
+                }
+                if (alpha >= beta){
+                    break;
                 }
             }
         }
@@ -67,7 +73,7 @@ public class ComputerPlayer implements Player {
         float bestScore = Integer.MIN_VALUE;
         for (int move : board.getEmpty()){
             board.setCell(marker,move);
-            float score = -negamax(opponent, 1);
+            float score = -negamax(opponent, 1, Integer.MIN_VALUE, Integer.MAX_VALUE);
             undoMove(move);
             if (score > bestScore){
                 bestScore = score;

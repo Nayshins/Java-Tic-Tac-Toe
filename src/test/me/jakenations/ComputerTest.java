@@ -88,7 +88,7 @@ public class ComputerTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(0, computer.negamax('X', 1), 0.01);
+        assertEquals(0, computer.negamax('X', 1, Integer.MIN_VALUE, Integer.MAX_VALUE), 0.01);
     }
 
     @Test
@@ -102,7 +102,7 @@ public class ComputerTest {
         board.setCell('X', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(1, computer.negamax('X', 1), 0.01);
+        assertEquals(1, computer.negamax('X', 1, Integer.MIN_VALUE, Integer.MAX_VALUE), 0.01);
     }
 
     @Test
@@ -116,7 +116,7 @@ public class ComputerTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(-1, computer.negamax('X', 1), 0.01);
+        assertEquals(-1, computer.negamax('X', 1, Integer.MIN_VALUE, Integer.MAX_VALUE), 0.01);
     }
 
     @Test
@@ -128,7 +128,7 @@ public class ComputerTest {
         board.setCell('O', 5);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(1, computer.negamax('X', 0), 0.01);
+        assertEquals(1, computer.negamax('X', 0, Integer.MIN_VALUE, Integer.MAX_VALUE), 0.01);
     }
 
     @Test
@@ -141,7 +141,7 @@ public class ComputerTest {
         board.setCell('O', 5);
         board.setCell('X', 7);
         board.setCell('X', 8);
-        assertEquals(0, computer.negamax('O', 0), 0.01);
+        assertEquals(0, computer.negamax('O', 0, Integer.MIN_VALUE, Integer.MAX_VALUE), 0.01);
     }
 
     @Test

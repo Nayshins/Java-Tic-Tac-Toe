@@ -30,12 +30,25 @@ public class ConsoleUi implements UI {
     }
 
     public void printBoard() {
-        String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ "\n" +
+        if (board.getGrid().length == 9){
+            String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ "\n" +
                 "---+---+---\n" +
                 " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
                 "---+---+---\n" +
                 " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) +"\n";
-        print(boardString);
+            print(boardString);
+        } else {
+            String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ " | " + board.getCell(3) +"\n" +
+                "---+---+---+---\n" +
+                " " + board.getCell(4) + " | " + board.getCell(5) + " | " + board.getCell(6) + " | " + board.getCell(7) + "\n" +
+                "---+---+---+---\n" +
+                " " + board.getCell(8) + " | " + board.getCell(9) + " | " + board.getCell(10) +  " | " + board.getCell(11) +"\n" +
+                "---+---+---+---\n" +
+                " " + board.getCell(12) + " | " + board.getCell(13) + " | " + board.getCell(14) +  " | " + board.getCell(15) +"\n";
+            print(boardString);
+        }
+
+
     }
 
     public void spaceOccupied() {
