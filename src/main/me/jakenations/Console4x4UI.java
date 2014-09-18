@@ -14,6 +14,7 @@ public class Console4x4UI implements UI {
         System.out.println(string);
     }
 
+
     @Override
     public String getInput() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

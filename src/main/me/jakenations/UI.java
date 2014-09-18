@@ -21,4 +21,6 @@ public interface UI {
     void draw();
 
     boolean validateMove(String input);
+
+    void print(String message);
 }

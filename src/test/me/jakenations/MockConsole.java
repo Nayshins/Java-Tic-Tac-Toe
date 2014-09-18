@@ -12,7 +12,6 @@ public class MockConsole implements UI {
     private boolean boardPrinted = false;
     public boolean isWinner = false;
     public boolean isDraw = false;
-
     public void welcome() {
         welcomed = true;
     }
@@ -37,7 +36,7 @@ public class MockConsole implements UI {
         this.inputs = incorrectInput;
     }
 
-    public void printBoard(){
+    public void printBoard(Board board){
         boardPrinted = true;
     }
 
@@ -53,13 +52,25 @@ public class MockConsole implements UI {
 
 
     @Override
+    public void print(String message) {
+
+    }
+
+    @Override
     public void spaceOccupied() {
         inputWarningSent = true;
     }
 
-    @Override
-    public void invalidInput() {
+   public boolean validateMove(String input){
+        if (input.matches("[1-9]")){
+            return true;
+        }
+        invalidInput();
+        return false;
+    }
 
+     public void invalidInput() {
+        print("Invalid input!");
     }
 
     public boolean wasInputWarningSent() {

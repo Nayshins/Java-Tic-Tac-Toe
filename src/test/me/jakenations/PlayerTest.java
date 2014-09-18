@@ -70,11 +70,4 @@ public class PlayerTest {
         assertTrue(console.wasInputWarningSent());
         assertEquals('X', board.getCell(3));
     }
-
-    @Test
-    public void validateMoveTest() {
-        assertTrue(player.validateMove("1"));
-        assertFalse(player.validateMove("11"));
-        assertFalse(player.validateMove("A"));
-    }
 }

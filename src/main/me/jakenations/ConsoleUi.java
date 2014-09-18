@@ -43,10 +43,6 @@ public class ConsoleUi implements UI {
         print(marker + " is the winner!");
     }
 
-    public void computerMove() {
-        print("Computer is making it's move");
-    }
-
     public void draw() {
         print("Game ended in a draw!");
     }

@@ -7,17 +7,19 @@ import org.junit.Test;
 import java.io.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ConsoleUiTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private ConsoleUi console;
+    private UI console;
     private Board board;
 
     @Before
     public void setUp() {
         System.setOut(new PrintStream(outContent));
         this.board = new Board3x3();
-        this.console = new ConsoleUi(board);
+        this.console = new ConsoleUi();
     }
 
     @After
@@ -61,7 +63,7 @@ public class ConsoleUiTest {
 
     @Test
     public void printBoardTest() throws Exception {
-        console.printBoard();
+        console.printBoard(board);
         String boardString =
                 " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2) + "\n" +
                         "---+---+---\n" +
@@ -86,16 +88,25 @@ public class ConsoleUiTest {
         assertEquals("X is the winner!\n", outContent.toString());
     }
 
-    @Test
-    public void testComputerMakingMove() throws Exception {
-        console.computerMove();
-        assertEquals("Computer is making it's move\n", outContent.toString());
-    }
 
     @Test
     public void testDraw() throws Exception {
         console.draw();
         assertEquals("Game ended in a draw!\n", outContent.toString());
 
+    }
+
+    @Test
+    public void validateMoveTest() {
+        assertTrue(console.validateMove("1"));
+    }
+    @Test
+    public void validateMoveFalseNumberTest() {
+        assertFalse(console.validateMove("11"));
+    }
+
+    @Test
+    public void validateMoveFalseLetterTest() {
+        assertFalse(console.validateMove("A"));
     }
 }
