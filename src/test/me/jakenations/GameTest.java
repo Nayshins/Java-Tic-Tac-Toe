@@ -20,10 +20,10 @@ public class GameTest {
 
         Game game = new Game(console, testRules, board, player1, player2);
 
-        Queue<String> inputQueue = new LinkedList<String>();
-        inputQueue.add("A");
-        inputQueue.add("3");
-        inputQueue.add("4");
+        Queue<Integer> inputQueue = new LinkedList<Integer>();
+        inputQueue.add(1);
+        inputQueue.add(3);
+        inputQueue.add(4);
         console.setInput(inputQueue);
 
         Queue<Boolean> gameOverQueue = new LinkedList<Boolean>();

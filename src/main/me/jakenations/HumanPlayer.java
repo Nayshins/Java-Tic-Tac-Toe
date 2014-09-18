@@ -26,19 +26,15 @@ public class HumanPlayer implements Player {
 
         console.movePrompt(board.getSize());
         while (!validMove) {
-            String input = console.getInput();
-            if (console.validateMove(input)){
-                int move = Integer.parseInt(input);
-                move -= 1;
-                try {
-                    validMove = true;
-                    makeMove(move);
-                } catch (Exception cellOccupied){
-                    validMove = false;
-                    console.invalidInput();
-                }
+            int move = console.getGameInput();
+            move -= 1;
+            try {
+                validMove = true;
+                makeMove(move);
+            } catch (Exception cellOccupied){
+                validMove = false;
+                console.invalidInput();
             }
-
         }
     }
 }

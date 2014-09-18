@@ -7,7 +7,7 @@ import java.util.Queue;
 public class MockConsole implements UI {
     private boolean welcomed = false;
     private boolean solicitedInput = false;
-    private Queue<String> inputs;
+    private Queue<Integer> inputs;
     private boolean inputWarningSent = false;
     private boolean boardPrinted = false;
     public boolean isWinner = false;
@@ -18,6 +18,11 @@ public class MockConsole implements UI {
 
     @Override
     public String getInput() throws IOException {
+        return null;
+    }
+
+    @Override
+    public int getGameInput() throws IOException {
         return inputs.remove();
     }
 
@@ -35,7 +40,7 @@ public class MockConsole implements UI {
         return welcomed;
     }
 
-    public void setInput(Queue<String> incorrectInput) {
+    public void setInput(Queue<Integer> incorrectInput) {
         this.inputs = incorrectInput;
     }
 
@@ -60,6 +65,11 @@ public class MockConsole implements UI {
     }
 
     @Override
+    public void gameTypePrompt() {
+
+    }
+
+    @Override
     public void spaceOccupied() {
         inputWarningSent = true;
     }
@@ -73,7 +83,7 @@ public class MockConsole implements UI {
     }
 
      public void invalidInput() {
-        print("Invalid input!");
+        inputWarningSent = true;
     }
 
     public boolean wasInputWarningSent() {

@@ -54,4 +54,20 @@ public class ConsoleUI implements UI {
     public void gameTypePrompt() {
         print("To start a game please enter 1 for a 3 x 3 board or 2 for a 4 x 4 board");
     }
+
+    @Override
+    public int getGameInput() throws IOException {
+        boolean validInput = false;
+        int input = -1;
+        while (!validInput) {
+            try {
+                validInput = true;
+                input = Integer.parseInt(getInput());
+            } catch (NumberFormatException e) {
+                invalidInput();
+                validInput = false;
+            }
+        }
+        return input;
+    }
 }

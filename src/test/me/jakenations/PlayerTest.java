@@ -49,8 +49,8 @@ public class PlayerTest {
     @Test
     public void testSelectMove() throws Exception {
 
-        Queue<String> inputQueue = new LinkedList<String>();
-        inputQueue.add("1");
+        Queue<Integer> inputQueue = new LinkedList<Integer>();
+        inputQueue.add(1);
         console.setInput(inputQueue);
         player.selectMove();
         assertTrue(console.isSolicitedInput());
@@ -60,10 +60,9 @@ public class PlayerTest {
     @Test
     public void testSelectMoveWithSpaceOccupiedInput() throws Exception {
         board.setCell('O', 2);
-        Queue<String> inputQueue = new LinkedList<String>();
-        inputQueue.add("A");
-        inputQueue.add("3");
-        inputQueue.add("4");
+        Queue<Integer> inputQueue = new LinkedList<Integer>();
+        inputQueue.add(3);
+        inputQueue.add(4);
         console.setInput(inputQueue);
         player.selectMove();
         assertEquals('O', board.getCell(2));

@@ -21,4 +21,8 @@ public interface UI {
     boolean validateMove(String input);
 
     void print(String message);
+
+    void  gameTypePrompt();
+
+    int getGameInput() throws IOException;
 }
