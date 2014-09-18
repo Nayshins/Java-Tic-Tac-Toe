@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleUi implements UI {
-    private Board board;
 
-    public ConsoleUi(Board board) {
-        this.board = board;
-    }
 
     public void print(String string) {
         System.out.println(string);
@@ -29,25 +25,13 @@ public class ConsoleUi implements UI {
         print("Make a move by entering a number 1-9");
     }
 
-    public void printBoard() {
-        if (board.getGrid().length == 9){
-            String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ "\n" +
-                "---+---+---\n" +
-                " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
-                "---+---+---\n" +
-                " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) +"\n";
-            print(boardString);
-        } else {
-            String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ " | " + board.getCell(3) +"\n" +
-                "---+---+---+---\n" +
-                " " + board.getCell(4) + " | " + board.getCell(5) + " | " + board.getCell(6) + " | " + board.getCell(7) + "\n" +
-                "---+---+---+---\n" +
-                " " + board.getCell(8) + " | " + board.getCell(9) + " | " + board.getCell(10) +  " | " + board.getCell(11) +"\n" +
-                "---+---+---+---\n" +
-                " " + board.getCell(12) + " | " + board.getCell(13) + " | " + board.getCell(14) +  " | " + board.getCell(15) +"\n";
-            print(boardString);
-        }
-
+    public void printBoard(Board board ) {
+        String boardString =  " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2)+ "\n" +
+            "---+---+---\n" +
+            " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
+            "---+---+---\n" +
+            " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) +"\n";
+        print(boardString);
 
     }
 
@@ -69,5 +53,13 @@ public class ConsoleUi implements UI {
 
     public void invalidInput() {
         print("Invalid input!");
+    }
+
+    public boolean validateMove(String input){
+        if (input.matches("[1-9]")){
+            return true;
+        }
+        invalidInput();
+        return false;
     }
 }

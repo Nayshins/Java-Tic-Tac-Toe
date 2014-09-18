@@ -14,9 +14,11 @@ public interface UI {
 
     void invalidInput();
 
-    void printBoard();
+    void printBoard(Board board);
 
     void winner(char marker);
 
     void draw();
+
+    boolean validateMove(String input);
 }

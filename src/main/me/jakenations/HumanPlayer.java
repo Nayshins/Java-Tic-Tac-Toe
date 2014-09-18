@@ -27,7 +27,7 @@ public class HumanPlayer implements Player {
         console.movePrompt();
         while (!validMove) {
             String input = console.getInput();
-            if (validateMove(input)){
+            if (console.validateMove(input)){
                 int move = Integer.parseInt(input);
                 move -= 1;
                 try {
@@ -40,13 +40,5 @@ public class HumanPlayer implements Player {
             }
 
         }
-    }
-
-    public boolean validateMove(String input){
-        if (input.matches("[1-9]")){
-            return true;
-        }
-        console.invalidInput();
-        return false;
     }
 }
