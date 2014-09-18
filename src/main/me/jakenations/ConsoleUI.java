@@ -58,15 +58,17 @@ public class ConsoleUI implements UI {
 
     public void playerOnePrompt() {
         print("Select who will be player 1 this game\n");
-        print("enter 1 for human\n ");
-        print("enter 2 for computer\n ");
+        print("Enter 1 for human\n ");
+        print("Enter 2 for computer\n ");
+        print("Enter 3 for a lazy computer");
         print(("Default is human\n"));
     }
 
     public void playerTwoPrompt() {
         print("Select who will be player 2 this game\n");
-        print("enter 1 for human\n");
-        print("enter 2 for computer\n");
+        print("Enter 1 for human\n");
+        print("Enter 2 for computer\n");
+        print("Enter 3 for a lazy computer");
         print(("Default is human\n"));
     }
 
