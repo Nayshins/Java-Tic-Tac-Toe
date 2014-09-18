@@ -25,4 +25,8 @@ public interface UI {
     void  gameTypePrompt();
 
     int getGameInput() throws IOException;
+
+    void playerOnePrompt();
+
+    void playerTwoPrompt();
 }

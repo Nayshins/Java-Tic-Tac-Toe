@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Nayshins on 9/18/14.
- */
 public class RulesFactoryTest {
     @Test
     public void createsRules3x3WhenOne(){

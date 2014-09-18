@@ -27,6 +27,16 @@ public class MockConsole implements UI {
     }
 
     @Override
+    public void playerOnePrompt() {
+
+    }
+
+    @Override
+    public void playerTwoPrompt() {
+
+    }
+
+    @Override
     public void movePrompt(int boardSize) {
          solicitedInput = true;
     }
@@ -42,10 +52,6 @@ public class MockConsole implements UI {
 
     public void setInput(Queue<Integer> incorrectInput) {
         this.inputs = incorrectInput;
-    }
-
-    public void printBoard(Board board){
-        boardPrinted = true;
     }
 
     @Override

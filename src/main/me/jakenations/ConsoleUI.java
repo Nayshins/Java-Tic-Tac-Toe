@@ -53,6 +53,21 @@ public class ConsoleUI implements UI {
 
     public void gameTypePrompt() {
         print("To start a game please enter 1 for a 3 x 3 board or 2 for a 4 x 4 board");
+        print("Will default to 3x3 game for any other number");
+    }
+
+    public void playerOnePrompt() {
+        print("Select who will be player 1 this game");
+        print("enter 1 for human ");
+        print("enter 2 for computer ");
+        print(("Default is human"));
+    }
+
+    public void playerTwoPrompt() {
+        print("Select who will be player 2 this game");
+        print("enter 1 for human ");
+        print("enter 2 for computer ");
+        print(("Default is human"));
     }
 
     @Override
