@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ConsoleUiTest {
+public class ConsoleUITest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private UI console;
     private Board board;
@@ -19,7 +19,7 @@ public class ConsoleUiTest {
     public void setUp() {
         System.setOut(new PrintStream(outContent));
         this.board = new Board3x3();
-        this.console = new ConsoleUi();
+        this.console = new ConsoleUI();
     }
 
     @After
@@ -56,21 +56,8 @@ public class ConsoleUiTest {
 
     @Test
     public void movePromptTest() {
-        console.movePrompt();
+        console.movePrompt(board.getSize());
         assertEquals("Make a move by entering a number 1-9\n", outContent.toString());
-
-    }
-
-    @Test
-    public void printBoardTest() throws Exception {
-        console.printBoard(board);
-        String boardString =
-                " " + board.getCell(0) + " | " + board.getCell(1) + " | " + board.getCell(2) + "\n" +
-                        "---+---+---\n" +
-                        " " + board.getCell(3) + " | " + board.getCell(4) + " | " + board.getCell(5) + "\n" +
-                        "---+---+---\n" +
-                        " " + board.getCell(6) + " | " + board.getCell(7) + " | " + board.getCell(8) + "\n\n";
-        assertEquals(boardString, outContent.toString());
 
     }
 
@@ -99,10 +86,6 @@ public class ConsoleUiTest {
     @Test
     public void validateMoveTest() {
         assertTrue(console.validateMove("1"));
-    }
-    @Test
-    public void validateMoveFalseNumberTest() {
-        assertFalse(console.validateMove("11"));
     }
 
     @Test

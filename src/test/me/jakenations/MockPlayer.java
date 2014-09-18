@@ -29,7 +29,7 @@ public class MockPlayer implements Player {
     public void selectMove() throws IOException {
          boolean validMove = false;
 
-        console.movePrompt();
+        console.movePrompt(board.getSize());
         while (!validMove) {
             String input = console.getInput();
             if (validateMove(input)){

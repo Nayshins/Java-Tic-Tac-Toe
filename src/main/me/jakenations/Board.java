@@ -25,4 +25,8 @@ public interface Board {
     public boolean cellOccupied(int index);
 
     public void undoCell(int index);
+
+    public int getSize();
+
+    public String getBoardString();
 }

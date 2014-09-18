@@ -24,10 +24,10 @@ public class Game {
 
     public void gameLoop() throws Exception {
         console.welcome();
-        console.printBoard(board);
+        console.print(board.getBoardString());
         while (!rules.gameOver()){
             currentPlayer.selectMove();
-            console.printBoard(board);
+            console.print(board.getBoardString());
             switchPlayers();
         }
         gameOverHandler();

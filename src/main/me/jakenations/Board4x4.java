@@ -8,10 +8,14 @@ import java.util.Arrays;
  */
 public class Board4x4 implements Board {
     private static final char EMPTY = ' ';
+    private int size = 16;
+
     private char[] grid = new char[]{EMPTY, EMPTY, EMPTY, EMPTY,
                                      EMPTY, EMPTY, EMPTY, EMPTY,
                                      EMPTY, EMPTY, EMPTY, EMPTY,
                                      EMPTY, EMPTY, EMPTY, EMPTY};
+
+
     @Override
     public char[] getGrid() {
         return grid;
@@ -101,5 +105,21 @@ public class Board4x4 implements Board {
     @Override
     public void undoCell(int index) {
         grid[index] = EMPTY;
+    }
+
+    @Override
+    public int getSize() {
+        return size;
+    }
+
+    @Override
+    public String getBoardString() {
+        return  " " + getCell(0) + " | " + getCell(1) + " | " + getCell(2)+ " | " + getCell(3) +"\n" +
+                "---+---+---+---\n" +
+                " " + getCell(4) + " | " + getCell(5) + " | " + getCell(6) + " | " + getCell(7) + "\n" +
+                "---+---+---+---\n" +
+                " " + getCell(8) + " | " + getCell(9) + " | " + getCell(10) +  " | " + getCell(11) +"\n" +
+                "---+---+---+---\n" +
+                " " + getCell(12) + " | " + getCell(13) + " | " + getCell(14) +  " | " + getCell(15) +"\n";
     }
 }

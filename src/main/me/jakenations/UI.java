@@ -8,13 +8,11 @@ public interface UI {
 
     public String getInput() throws IOException;
 
-    void movePrompt();
+    void movePrompt(int boardSize);
 
     void spaceOccupied();
 
     void invalidInput();
-
-    void printBoard(Board board);
 
     void winner(char marker);
 

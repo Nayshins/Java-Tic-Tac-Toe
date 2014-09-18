@@ -24,7 +24,7 @@ public class HumanPlayer implements Player {
     public void selectMove() throws IOException {
         boolean validMove = false;
 
-        console.movePrompt();
+        console.movePrompt(board.getSize());
         while (!validMove) {
             String input = console.getInput();
             if (console.validateMove(input)){
@@ -35,7 +35,7 @@ public class HumanPlayer implements Player {
                     makeMove(move);
                 } catch (Exception cellOccupied){
                     validMove = false;
-                    console.spaceOccupied();
+                    console.invalidInput();
                 }
             }
 

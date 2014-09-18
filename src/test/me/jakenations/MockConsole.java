@@ -21,9 +21,12 @@ public class MockConsole implements UI {
         return inputs.remove();
     }
 
-    public void movePrompt() {
-        solicitedInput = true;
+    @Override
+    public void movePrompt(int boardSize) {
+         solicitedInput = true;
     }
+
+
 
     public boolean isSolicitedInput() {
         return solicitedInput;

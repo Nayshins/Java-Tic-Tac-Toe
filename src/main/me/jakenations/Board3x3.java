@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class Board3x3 implements Board{
     private static final char EMPTY = ' ';
+    private int size = 9;
 
     private char[] grid = new char[]{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY};
 
@@ -17,7 +18,7 @@ public class Board3x3 implements Board{
     }
 
     public void setCell(char marker, int index) throws Exception {
-        if (cellOccupied(index)){
+        if (cellOccupied(index) || index > size - 1){
             throw new Exception();
         } else {
             grid[index] = marker;
@@ -85,5 +86,19 @@ public class Board3x3 implements Board{
 
     public void undoCell(int index) {
         grid[index] = EMPTY;
+    }
+
+    @Override
+    public int getSize() {
+        return size;
+    }
+
+    @Override
+    public String getBoardString() {
+        return " " + getCell(0) + " | " + getCell(1) + " | " + getCell(2) + "\n" +
+               "---+---+---\n" +
+               " " + getCell(3) + " | " + getCell(4) + " | " + getCell(5) + "\n" +
+               "---+---+---\n" +
+               " " + getCell(6) + " | " + getCell(7) + " | " + getCell(8) +"\n";
     }
 }

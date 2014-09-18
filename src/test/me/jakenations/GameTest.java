@@ -34,7 +34,6 @@ public class GameTest {
 
         game.gameLoop();
         assertTrue(console.isWelcomed());
-        assertTrue(console.isBoardPrinted());
         assertTrue(player1.getMoveMade());
         assertTrue(player2.getMoveMade());
     }
