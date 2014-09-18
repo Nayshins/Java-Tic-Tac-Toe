@@ -3,10 +3,10 @@ package me.jakenations;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-	    Board board = new Board3x3();
-        Rules rules = new GameRules(board);
+	    Board board = new Board4x4();
+        Rules rules = new GameRules4x4(board);
 
-        UI console = new ConsoleUi();
+        UI console = new Console4x4Ui();
         Player player = new HumanPlayer('X', board, console);
         Player computer = new ComputerPlayer('O', board, rules);
         Game game = new Game(console, rules, board, player, computer);
