@@ -51,7 +51,7 @@ public class ConsoleUITest {
     @Test
     public void welcomeTest() {
         console.welcome();
-        assertEquals("Welcome to Tic Tac Toe\n", outContent.toString());
+        assertEquals("Welcome to Tic Tac Toe\n\n", outContent.toString());
     }
 
     @Test

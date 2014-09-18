@@ -37,6 +37,11 @@ public class MockConsole implements UI {
     }
 
     @Override
+    public void playAgain() {
+
+    }
+
+    @Override
     public void movePrompt(int boardSize) {
          solicitedInput = true;
     }

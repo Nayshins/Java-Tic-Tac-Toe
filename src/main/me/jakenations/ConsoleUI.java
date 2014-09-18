@@ -11,7 +11,7 @@ public class ConsoleUI implements UI {
     }
 
     public void welcome() {
-        print("Welcome to Tic Tac Toe");
+        print("Welcome to Tic Tac Toe\n");
     }
 
     public String getInput() throws IOException {
@@ -48,26 +48,32 @@ public class ConsoleUI implements UI {
     }
 
     public void invalidInput() {
-        print("Invalid input! Try another square!");
+        print("Invalid input! Please enter a number!");
     }
 
     public void gameTypePrompt() {
-        print("To start a game please enter 1 for a 3 x 3 board or 2 for a 4 x 4 board");
-        print("Will default to 3x3 game for any other number");
+        print("To start a game please enter 1 for a 3 x 3 board or 2 for a 4 x 4 board\n");
+        print("Will default to 3x3 game for any other number\n");
     }
 
     public void playerOnePrompt() {
-        print("Select who will be player 1 this game");
-        print("enter 1 for human ");
-        print("enter 2 for computer ");
-        print(("Default is human"));
+        print("Select who will be player 1 this game\n");
+        print("enter 1 for human\n ");
+        print("enter 2 for computer\n ");
+        print(("Default is human\n"));
     }
 
     public void playerTwoPrompt() {
-        print("Select who will be player 2 this game");
-        print("enter 1 for human ");
-        print("enter 2 for computer ");
-        print(("Default is human"));
+        print("Select who will be player 2 this game\n");
+        print("enter 1 for human\n");
+        print("enter 2 for computer\n");
+        print(("Default is human\n"));
+    }
+
+    public void playAgain() {
+        print("Would you like to play again?\n");
+        print("Enter 1 to play again\n");
+        print("Enter any other number or ctrl + c to quit\n");
     }
 
     @Override

@@ -29,4 +29,6 @@ public interface UI {
     void playerOnePrompt();
 
     void playerTwoPrompt();
+
+    void playAgain();
 }

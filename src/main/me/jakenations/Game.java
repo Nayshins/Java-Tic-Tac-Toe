@@ -50,4 +50,9 @@ public class Game {
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
+
+    public boolean playAgain() {
+        console.playAgain();
+        return false;
+    }
 }
