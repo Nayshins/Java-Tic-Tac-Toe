@@ -11,6 +11,6 @@ public class RulesFactory {
             return new GameRules4x4(board);
         }
 
-        return null;
+        return new GameRules(board);
     }
 }
