@@ -1,5 +1,7 @@
 package me.jakenations;
 
+import java.io.IOException;
+
 public class Game {
     private UI console;
     private Rules rules;
@@ -51,8 +53,14 @@ public class Game {
         return currentPlayer;
     }
 
-    public boolean playAgain() {
+    public boolean playAgain() throws IOException {
         console.playAgain();
-        return false;
+        int input = console.getGameInput();
+
+        if (input == 1) {
+            return false;
+        }
+
+        return true;
     }
 }
