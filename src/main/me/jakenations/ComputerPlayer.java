@@ -47,7 +47,7 @@ public class ComputerPlayer implements Player {
     public float negamax(char marker, int depth, float alpha, float beta) throws Exception {
         char opponent = getOpponent(marker);
         float bestScore = Integer.MIN_VALUE;
-        if (rules.gameOver() || depth >= 6){
+        if (rules.gameOver() || depth >= 7){
             return boardScore(marker) / depth;
         } else {
             for (int move : board.getEmpty()){
@@ -57,7 +57,7 @@ public class ComputerPlayer implements Player {
                 if (score > bestScore){
                     bestScore = score;
                 }
-                if (alpha > score){
+                if (alpha < score){
                     alpha = score;
                 }
                 if (alpha >= beta){
