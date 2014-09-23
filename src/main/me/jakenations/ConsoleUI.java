@@ -52,24 +52,32 @@ public class ConsoleUI implements UI {
     }
 
     public void gameTypePrompt() {
-        print("To start a game please enter 1 for a 3 x 3 board or 2 for a 4 x 4 board\n");
-        print("Will default to 3x3 game for any other number\n");
+        lineBreak();
+        print("To start a game please enter:  \n");
+        print("1) for a 3 x 3 board\n");
+        print("2) for a 4 x 4 board\n");
+        print("Game will default to 3x3  board\n");
+        lineBreak();
     }
 
     public void playerOnePrompt() {
+        lineBreak();
         print("Select who will be player 1 this game\n");
-        print("Enter 1 for human\n ");
-        print("Enter 2 for computer\n ");
-        print("Enter 3 for a lazy computer");
-        print(("Default is human\n"));
+        print("Enter 1) for human\n ");
+        print("Enter 2) for an unbeatable computer\n ");
+        print("Enter 3) for a lazy computer\n");
+        print(("Default player is human\n"));
+        lineBreak();
     }
 
     public void playerTwoPrompt() {
+        lineBreak();
         print("Select who will be player 2 this game\n");
-        print("Enter 1 for human\n");
-        print("Enter 2 for computer\n");
-        print("Enter 3 for a lazy computer");
-        print(("Default is human\n"));
+        print("Enter 1) for human\n");
+        print("Enter 2) for an unbeatable computer\n");
+        print("Enter 3) for a lazy computer\n");
+        print("Default player is human\n");
+        lineBreak();
     }
 
     public void playAgain() {
@@ -77,6 +85,11 @@ public class ConsoleUI implements UI {
         print("Enter 1 to play again\n");
         print("Enter any other number or ctrl + c to quit\n");
     }
+
+    public void lineBreak() {
+        print("+*+*+*+*+*+*+*+*+*+*+*+*+\n");
+    }
+
 
     @Override
     public int getGameInput() throws IOException {

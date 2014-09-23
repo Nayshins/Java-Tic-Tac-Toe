@@ -10,9 +10,7 @@ public class GameRules implements Rules {
         this.board = board;
     }
 
-    public boolean isDraw() {
-        return draw();
-    }
+
 
 
     public boolean winner(ArrayList<char[]> solutions) {
@@ -27,23 +25,20 @@ public class GameRules implements Rules {
         return false;
     }
 
-    public boolean draw() {
-        if (board.getEmpty().size() == 0){
-            return true;
-        }
-        return false;
+    public boolean isDraw() {
+        return board.getEmpty().size() == 0;
     }
 
-    public boolean gameOver() {
+    public boolean isGameOver() {
         if (winner(board.makeSolutions())) {
             return true;
-        } else if (draw()){
+        } else if (isDraw()){
             return true;
         }
         return false;
     }
 
-    public boolean winTest(char marker, ArrayList<char[]> solutions){
+    public boolean isMarkerWinner(char marker, ArrayList<char[]> solutions){
         for (char[] solution : solutions) {
             char first = solution[0];
             if (first == ' ' || first != marker) {
@@ -53,5 +48,9 @@ public class GameRules implements Rules {
             }
         }
         return false;
+    }
+
+    private boolean isBlank(char first) {
+        return first != ' ';
     }
 }

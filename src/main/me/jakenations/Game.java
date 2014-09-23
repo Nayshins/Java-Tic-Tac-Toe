@@ -25,14 +25,25 @@ public class Game {
     }
 
     public void gameLoop() throws Exception {
-        console.welcome();
-        console.print(board.getBoardString());
-        while (!rules.gameOver()){
-            currentPlayer.selectMove();
-            console.print(board.getBoardString());
-            switchPlayers();
+        welcome();
+        while (!rules.isGameOver()){
+            takeTurn();
         }
         gameOverHandler();
+    }
+
+    private void takeTurn() throws Exception {
+        currentPlayer.selectMove();
+        console.print(board.getBoardString());
+        console.lineBreak();
+        switchPlayers();
+    }
+
+    private void welcome() {
+        console.lineBreak();
+        console.welcome();
+        console.print(board.getBoardString());
+        console.lineBreak();
     }
 
     public void gameOverHandler() {
@@ -56,11 +67,6 @@ public class Game {
     public boolean playAgain() throws IOException {
         console.playAgain();
         int input = console.getGameInput();
-
-        if (input == 1) {
-            return false;
-        }
-
-        return true;
+        return input != 1;
     }
 }

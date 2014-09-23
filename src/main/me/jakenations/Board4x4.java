@@ -7,7 +7,6 @@ import java.util.Arrays;
  * Created by Nayshins on 9/17/14.
  */
 public class Board4x4 implements Board {
-    private static final char EMPTY = ' ';
     private int size = 16;
 
     private char[] grid = new char[]{EMPTY, EMPTY, EMPTY, EMPTY,

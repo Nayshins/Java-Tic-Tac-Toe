@@ -31,4 +31,6 @@ public interface UI {
     void playerTwoPrompt();
 
     void playAgain();
+
+    void lineBreak();
 }

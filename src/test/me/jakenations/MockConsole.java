@@ -42,6 +42,11 @@ public class MockConsole implements UI {
     }
 
     @Override
+    public void lineBreak() {
+        
+    }
+
+    @Override
     public void movePrompt(int boardSize) {
          solicitedInput = true;
     }

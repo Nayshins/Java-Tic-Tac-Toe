@@ -17,11 +17,6 @@ public class Board3x3Test {
         this.board = new Board3x3();
     }
 
-    @After
-    public void tearDown() {
-        this.board = null;
-    }
-
     @Test
     public void testGrid() {
         char[] testGrid = new char[]{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};

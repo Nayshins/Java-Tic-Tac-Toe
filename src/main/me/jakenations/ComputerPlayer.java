@@ -37,9 +37,9 @@ public class ComputerPlayer implements Player {
     }
 
     public float boardScore(char marker){
-        if (rules.winTest(marker, board.makeSolutions())){
+        if (rules.isMarkerWinner(marker, board.makeSolutions())){
             return (float) 1.0;
-        } else if (rules.winTest(getOpponent(marker),board.makeSolutions())) {
+        } else if (rules.isMarkerWinner(getOpponent(marker), board.makeSolutions())) {
             return (float) -1.0;
         }
         return (float) 0.0;
@@ -47,7 +47,7 @@ public class ComputerPlayer implements Player {
     public float negamax(char marker, int depth, float alpha, float beta) throws Exception {
         char opponent = getOpponent(marker);
         float bestScore = Integer.MIN_VALUE;
-        if (rules.gameOver() || depth >= 7){
+        if (rules.isGameOver() || depth >= 7){
             return boardScore(marker) / depth;
         } else {
             for (int move : board.getEmpty()){

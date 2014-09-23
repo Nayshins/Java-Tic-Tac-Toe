@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Board3x3 implements Board{
-    private static final char EMPTY = ' ';
     private int size = 9;
 
     private char[] grid = new char[]{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY};

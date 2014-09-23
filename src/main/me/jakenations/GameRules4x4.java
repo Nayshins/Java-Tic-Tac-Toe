@@ -26,25 +26,22 @@ public class GameRules4x4 implements Rules {
     }
 
 
-    public boolean draw() {
-        if (board.getEmpty().size() == 0){
-            return true;
-        }
-        return false;
+    public boolean isDraw() {
+        return board.getEmpty().size() == 0;
     }
 
     @Override
-    public boolean gameOver() {
+    public boolean isGameOver() {
         if (winner(board.makeSolutions())) {
             return true;
-        } else if (draw()){
+        } else if (isDraw()){
             return true;
         }
         return false;
     }
 
     @Override
-    public boolean winTest(char marker, ArrayList<char[]> solutions) {
+    public boolean isMarkerWinner(char marker, ArrayList<char[]> solutions) {
          for (char[] solution : solutions) {
             char first = solution[0];
             if (first == ' ' || first != marker) {
@@ -54,11 +51,6 @@ public class GameRules4x4 implements Rules {
             }
         }
         return false;
-    }
-
-    @Override
-    public boolean isDraw() {
-        return draw();
     }
 }
 

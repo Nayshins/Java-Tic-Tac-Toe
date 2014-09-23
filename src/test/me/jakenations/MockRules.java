@@ -13,24 +13,19 @@ public class MockRules implements Rules {
     }
 
     @Override
-    public boolean draw() {
+    public boolean isDraw() {
         return false;
     }
 
-    @Override
-    public boolean gameOver( ) {
+    public boolean isGameOverTest() {
         return isGameOver();
     }
 
     @Override
-    public boolean winTest(char marker, ArrayList<char[]> chars) {
+    public boolean isMarkerWinner(char marker, ArrayList<char[]> chars) {
         return false;
     }
 
-    @Override
-    public boolean isDraw() {
-        return false;
-    }
 
     public boolean isGameOver() {
         return gameOverQueue.remove();

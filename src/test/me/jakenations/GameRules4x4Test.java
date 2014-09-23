@@ -50,7 +50,7 @@ public class GameRules4x4Test {
         board.setCell('X', 1);
         board.setCell('X', 2);
         board.setCell('X', 3);
-        assertTrue(rules.winTest('X', board.makeSolutions()));
+        assertTrue(rules.isMarkerWinner('X', board.makeSolutions()));
     }
 
      @Test
@@ -58,7 +58,7 @@ public class GameRules4x4Test {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('X', 2);
-        assertFalse(rules.winTest('X', board.makeSolutions()));
+        assertFalse(rules.isMarkerWinner('X', board.makeSolutions()));
     }
 
 

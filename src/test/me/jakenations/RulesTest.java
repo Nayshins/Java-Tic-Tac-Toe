@@ -55,17 +55,17 @@ public class RulesTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('O', 8);
-        assertTrue("Returns true when there is a draw", rules.draw());
+        assertTrue("Returns true when there is a draw", rules.isDraw());
     }
 
     @Test
     public void noDrawTest() throws Exception {
-        assertFalse("Returns false when there is not a draw", rules.draw());
+        assertFalse("Returns false when there is not a draw", rules.isDraw());
     }
 
     @Test
     public void noGameOverTest() throws Exception {
-        assertFalse("Return false when there is no winner", rules.gameOver());
+        assertFalse("Return false when there is no winner", rules.isGameOver());
     }
 
     @Test
@@ -73,7 +73,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue("Return true when the game is won", rules.gameOver());
+        assertTrue("Return true when the game is won", rules.isGameOver());
         assertFalse(rules.isDraw());
     }
 
@@ -88,7 +88,7 @@ public class RulesTest {
         board.setCell('O', 6);
         board.setCell('X', 7);
         board.setCell('O', 8);
-        assertTrue("Return true when the game ends in a draw", rules.gameOver());
+        assertTrue("Return true when the game ends in a draw", rules.isGameOver());
         assertTrue(rules.isDraw());
     }
 
@@ -97,7 +97,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue(rules.winTest('X', board.makeSolutions()));
+        assertTrue(rules.isMarkerWinner('X', board.makeSolutions()));
     }
 
     @Test
@@ -105,7 +105,7 @@ public class RulesTest {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('X', 2);
-        assertFalse(rules.winTest('X', board.makeSolutions()));
+        assertFalse(rules.isMarkerWinner('X', board.makeSolutions()));
     }
 
     @Test
@@ -113,6 +113,6 @@ public class RulesTest {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('O', 2);
-        assertTrue(rules.winTest('O', board.makeSolutions()));
+        assertTrue(rules.isMarkerWinner('O', board.makeSolutions()));
     }
 }

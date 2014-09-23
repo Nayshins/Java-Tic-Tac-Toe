@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public interface Board {
+    public static final char EMPTY = ' ';
+
     public char[] getGrid();
 
     public char getCell(int index);
