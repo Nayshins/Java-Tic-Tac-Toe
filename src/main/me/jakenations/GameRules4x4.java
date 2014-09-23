@@ -10,10 +10,5 @@ public class GameRules4x4 extends Rules {
     boolean isWinningLine(char[] solution, char first) {
         return (first == solution[1] && first == solution[2] && first == solution[3]);
     }
-
-
-
-
-
 }
 

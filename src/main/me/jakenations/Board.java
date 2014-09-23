@@ -22,7 +22,7 @@ public interface Board {
 
     public ArrayList<char[]> makeDiagonals();
 
-    public ArrayList<char[]> makeSolutions();
+    public ArrayList<char[]> concatenateWinConditions();
 
     public boolean cellOccupied(int index);
 

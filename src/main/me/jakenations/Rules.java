@@ -29,7 +29,7 @@ public abstract class  Rules {
     }
 
     public boolean isGameOver() {
-        if (isWinner(board.makeSolutions())) {
+        if (isWinner(board.concatenateWinConditions())) {
             return true;
         } else if (isDraw()){
             return true;

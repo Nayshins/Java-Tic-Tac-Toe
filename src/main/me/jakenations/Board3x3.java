@@ -71,7 +71,7 @@ public class Board3x3 implements Board{
         return diagonals;
     }
 
-    public ArrayList<char[]> makeSolutions() {
+    public ArrayList<char[]> concatenateWinConditions() {
         ArrayList<char[]> solutions = new ArrayList<char[]>();
         solutions.addAll(makeRows());
         solutions.addAll(makeColumns());

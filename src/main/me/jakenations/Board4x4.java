@@ -88,7 +88,7 @@ public class Board4x4 implements Board {
     }
 
     @Override
-    public ArrayList<char[]> makeSolutions() {
+    public ArrayList<char[]> concatenateWinConditions() {
         ArrayList<char[]> solutions = new ArrayList<char[]>();
         solutions.addAll(makeRows());
         solutions.addAll(makeColumns());

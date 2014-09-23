@@ -37,9 +37,9 @@ public class ComputerPlayer implements Player {
     }
 
     public float boardScore(char marker){
-        if (rules.isMarkerWinner(marker, board.makeSolutions())){
+        if (rules.isMarkerWinner(marker, board.concatenateWinConditions())){
             return (float) 1.0;
-        } else if (rules.isMarkerWinner(getOpponent(marker), board.makeSolutions())) {
+        } else if (rules.isMarkerWinner(getOpponent(marker), board.concatenateWinConditions())) {
             return (float) -1.0;
         }
         return (float) 0.0;

@@ -1,6 +1,5 @@
 package me.jakenations;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -111,14 +110,14 @@ public class Board3x3Test {
         solutionsTest.add(new char[]{'X', ' ', ' '});
         solutionsTest.add(new char[]{'X', ' ', ' '});
         solutionsTest.add(new char[]{'X', ' ', ' '});
-        assertArrayEquals(solutionsTest.get(0), board.makeSolutions().get(0));
-        assertArrayEquals(solutionsTest.get(1), board.makeSolutions().get(1));
-        assertArrayEquals(solutionsTest.get(2), board.makeSolutions().get(2));
-        assertArrayEquals(solutionsTest.get(3), board.makeSolutions().get(3));
-        assertArrayEquals(solutionsTest.get(4), board.makeSolutions().get(4));
-        assertArrayEquals(solutionsTest.get(5), board.makeSolutions().get(5));
-        assertArrayEquals(solutionsTest.get(6), board.makeSolutions().get(6));
-        assertArrayEquals(solutionsTest.get(7), board.makeSolutions().get(7));
+        assertArrayEquals(solutionsTest.get(0), board.concatenateWinConditions().get(0));
+        assertArrayEquals(solutionsTest.get(1), board.concatenateWinConditions().get(1));
+        assertArrayEquals(solutionsTest.get(2), board.concatenateWinConditions().get(2));
+        assertArrayEquals(solutionsTest.get(3), board.concatenateWinConditions().get(3));
+        assertArrayEquals(solutionsTest.get(4), board.concatenateWinConditions().get(4));
+        assertArrayEquals(solutionsTest.get(5), board.concatenateWinConditions().get(5));
+        assertArrayEquals(solutionsTest.get(6), board.concatenateWinConditions().get(6));
+        assertArrayEquals(solutionsTest.get(7), board.concatenateWinConditions().get(7));
     }
 
     @Test

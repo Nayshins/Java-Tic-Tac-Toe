@@ -25,7 +25,7 @@ public class RulesTest {
 
     @Test
     public void noWinnerTest() {
-        assertFalse("Empty grid returns false", rules.isWinner(board.makeSolutions()));
+        assertFalse("Empty grid returns false", rules.isWinner(board.concatenateWinConditions()));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue("3 in a row returns true", rules.isWinner(board.makeSolutions()));
+        assertTrue("3 in a row returns true", rules.isWinner(board.concatenateWinConditions()));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 3);
         board.setCell('X', 6);
-        assertTrue("3 in a column return true", rules.isWinner(board.makeSolutions()));
+        assertTrue("3 in a column return true", rules.isWinner(board.concatenateWinConditions()));
     }
 
     @Test
@@ -97,7 +97,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue(rules.isMarkerWinner('X', board.makeSolutions()));
+        assertTrue(rules.isMarkerWinner('X', board.concatenateWinConditions()));
     }
 
     @Test
@@ -105,7 +105,7 @@ public class RulesTest {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('X', 2);
-        assertFalse(rules.isMarkerWinner('X', board.makeSolutions()));
+        assertFalse(rules.isMarkerWinner('X', board.concatenateWinConditions()));
     }
 
     @Test
@@ -113,6 +113,6 @@ public class RulesTest {
         board.setCell('O', 0);
         board.setCell('O', 1);
         board.setCell('O', 2);
-        assertTrue(rules.isMarkerWinner('O', board.makeSolutions()));
+        assertTrue(rules.isMarkerWinner('O', board.concatenateWinConditions()));
     }
 }
