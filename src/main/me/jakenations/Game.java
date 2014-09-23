@@ -66,7 +66,6 @@ public class Game {
 
     public boolean playAgain() throws IOException {
         console.playAgain();
-        int input = console.getGameInput();
-        return input != 1;
+        return console.getReplayInput();
     }
 }

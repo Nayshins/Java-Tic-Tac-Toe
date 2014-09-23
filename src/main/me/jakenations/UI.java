@@ -33,4 +33,6 @@ public interface UI {
     void playAgain();
 
     void lineBreak();
+
+    boolean getReplayInput() throws IOException;
 }

@@ -82,8 +82,8 @@ public class ConsoleUI implements UI {
 
     public void playAgain() {
         print("Would you like to play again?\n");
-        print("Enter 1 to play again\n");
-        print("Enter any other number or ctrl + c to quit\n");
+        print("Enter y to play again\n");
+        print("Enter any other key to quit\n");
     }
 
     public void lineBreak() {
@@ -105,5 +105,10 @@ public class ConsoleUI implements UI {
             }
         }
         return input;
+    }
+
+    public boolean getReplayInput() throws IOException {
+        String input = getInput();
+        return input.matches("[y]");
     }
 }

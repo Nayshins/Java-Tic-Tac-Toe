@@ -8,9 +8,9 @@ public class Main {
         PlayerFactory playerFactory = new PlayerFactory();
         UI console = new ConsoleUI();
 
-        boolean playAgain = false;
+        boolean playAgain = true;
 
-        while(!playAgain) {
+        while(playAgain) {
             console.gameTypePrompt();
             int gameType = console.getGameInput();
             Board board = boardFactory.createBoard(gameType);
