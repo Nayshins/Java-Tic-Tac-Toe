@@ -65,7 +65,7 @@ public class ConsoleUITest {
     public void testPrintsWinner() {
         char marker = 'X';
         console.winner(marker);
-        assertEquals("X is the winner!\n", outContent.toString());
+        assertEquals("X is the isWinner!\n", outContent.toString());
     }
 
 

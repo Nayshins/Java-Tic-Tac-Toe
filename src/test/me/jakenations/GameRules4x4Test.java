@@ -32,7 +32,7 @@ public class GameRules4x4Test {
         board.setCell('X', 1);
         board.setCell('X', 2);
         board.setCell('X', 3);
-        assertTrue("4 in a row returns true", rules.winner(board.makeSolutions()));
+        assertTrue("4 in a row returns true", rules.isWinner(board.makeSolutions()));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class GameRules4x4Test {
         board.setCell('X', 4);
         board.setCell('X', 8);
         board.setCell('X', 12);
-        assertTrue("4 in a column return true", rules.winner(board.makeSolutions()));
+        assertTrue("4 in a column return true", rules.isWinner(board.makeSolutions()));
     }
 
      @Test

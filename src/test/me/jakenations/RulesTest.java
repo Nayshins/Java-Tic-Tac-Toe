@@ -25,7 +25,7 @@ public class RulesTest {
 
     @Test
     public void noWinnerTest() {
-        assertFalse("Empty grid returns false", rules.winner(board.makeSolutions()));
+        assertFalse("Empty grid returns false", rules.isWinner(board.makeSolutions()));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 1);
         board.setCell('X', 2);
-        assertTrue("3 in a row returns true", rules.winner(board.makeSolutions()));
+        assertTrue("3 in a row returns true", rules.isWinner(board.makeSolutions()));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class RulesTest {
         board.setCell('X', 0);
         board.setCell('X', 3);
         board.setCell('X', 6);
-        assertTrue("3 in a column return true", rules.winner(board.makeSolutions()));
+        assertTrue("3 in a column return true", rules.isWinner(board.makeSolutions()));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class RulesTest {
 
     @Test
     public void noGameOverTest() throws Exception {
-        assertFalse("Return false when there is no winner", rules.isGameOver());
+        assertFalse("Return false when there is no isWinner", rules.isGameOver());
     }
 
     @Test

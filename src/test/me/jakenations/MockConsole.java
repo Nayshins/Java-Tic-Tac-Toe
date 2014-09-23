@@ -47,6 +47,11 @@ public class MockConsole implements UI {
     }
 
     @Override
+    public boolean getReplayInput() throws IOException {
+        return false;
+    }
+
+    @Override
     public void movePrompt(int boardSize) {
          solicitedInput = true;
     }

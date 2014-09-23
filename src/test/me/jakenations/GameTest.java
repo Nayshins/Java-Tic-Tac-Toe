@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 public class GameTest {
     @Test
     public void runsOnceWhileGameOverFalse() throws Exception {
-        MockRules testRules = new MockRules();
         Board board = new Board3x3();
+        MockRules testRules = new MockRules(board);
         MockConsole console = new MockConsole();
 
         MockPlayer player1 = new MockPlayer('X', board, console);
@@ -42,8 +42,8 @@ public class GameTest {
 
     @Test
     public void testSwitchPlayers() throws Exception {
-        Rules testRules = new MockRules();
         Board board = new Board3x3();
+        Rules testRules = new MockRules(board);
         MockConsole console = new MockConsole();
 
         Player player1 = new MockPlayer('X', board, console);

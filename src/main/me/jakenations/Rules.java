@@ -3,15 +3,53 @@ package me.jakenations;
 import java.util.ArrayList;
 
 
-public interface  Rules {
+public abstract class  Rules {
+    public Board board;
 
-    public boolean winner(ArrayList<char[]> solutions);
+    public Rules(Board board) {
+        this.board = board;
+    }
 
-    public boolean isDraw();
+    public boolean isWinner(ArrayList<char[]> solutions) {
+        for (char[] solution : solutions) {
+            char first = solution[0];
+            if (firstIsBlank(first)) {
+                continue;
+            } else if(isWinningLine(solution, first)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    public boolean isGameOver();
+    abstract boolean isWinningLine(char[] solution, char first);
 
-    public boolean isMarkerWinner(char marker, ArrayList<char[]> chars);
+    public boolean isDraw() {
+        return board.getEmpty().size() == 0;
+    }
 
+    public boolean isGameOver() {
+        if (isWinner(board.makeSolutions())) {
+            return true;
+        } else if (isDraw()){
+            return true;
+        }
+        return false;
+    }
 
+    public boolean isMarkerWinner(char marker, ArrayList<char[]> solutions) {
+         for (char[] solution : solutions) {
+            char first = solution[0];
+            if (firstIsBlank(first)|| first != marker) {
+                continue;
+            } else if(isWinningLine(solution, first)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean firstIsBlank(char first){
+        return first == board.EMPTY;
+    };
 }

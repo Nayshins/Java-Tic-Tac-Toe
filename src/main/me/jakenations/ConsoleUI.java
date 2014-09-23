@@ -29,7 +29,7 @@ public class ConsoleUI implements UI {
     }
 
     public void winner(char marker) {
-        print(marker + " is the winner!");
+        print(marker + " is the isWinner!");
     }
 
     public void draw() {
