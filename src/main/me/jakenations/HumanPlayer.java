@@ -3,12 +3,10 @@ package me.jakenations;
 import java.io.IOException;
 
 public class HumanPlayer implements Player {
-    private UI console;
     private Board board;
     private char marker;
 
-    public HumanPlayer(char marker, Board board, UI console) {
-        this.console = console;
+    public HumanPlayer(char marker, Board board) {
         this.board = board;
         this.marker = marker;
     }
@@ -23,17 +21,14 @@ public class HumanPlayer implements Player {
 
     public void selectMove() throws IOException {
         boolean validMove = false;
-
-        console.movePrompt(board.getSize());
         while (!validMove) {
-            int move = console.getGameInput();
+            int move = 1;
             move -= 1;
             try {
                 validMove = true;
                 makeMove(move);
             } catch (Exception cellOccupied){
                 validMove = false;
-                console.invalidInput();
             }
         }
     }

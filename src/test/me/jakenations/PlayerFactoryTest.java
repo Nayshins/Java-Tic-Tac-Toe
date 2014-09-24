@@ -13,25 +13,23 @@ public class PlayerFactoryTest {
     public void createsAHumanPlayerWhenOne(){
         PlayerFactory factory = new PlayerFactory();
         Board board = new Board3x3();
-        UI console = new ConsoleUI();
+
         Rules rules = new GameRules(board);
-        assertTrue(factory.createPlayer(1, 'X', board, console, rules) instanceof HumanPlayer);
+        assertTrue(factory.createPlayer(1, 'X', board, rules) instanceof HumanPlayer);
     }
     @Test
     public void createsAComputerPlayerWhenTwo(){
         PlayerFactory factory = new PlayerFactory();
         Board board = new Board3x3();
-        UI console = new ConsoleUI();
         Rules rules = new GameRules(board);
-        assertTrue(factory.createPlayer(2, 'X', board, console, rules) instanceof ComputerPlayer);
+        assertTrue(factory.createPlayer(2, 'X', board, rules) instanceof ComputerPlayer);
     }
 
     @Test
     public void createsLazyComputerPlayerWhenThree(){
         PlayerFactory factory = new PlayerFactory();
         Board board = new Board3x3();
-        UI console = new ConsoleUI();
         Rules rules = new GameRules(board);
-        assertTrue(factory.createPlayer(3, 'X', board, console, rules) instanceof LazyComputer);
+        assertTrue(factory.createPlayer(3, 'X', board, rules) instanceof LazyComputer);
     }
 }
