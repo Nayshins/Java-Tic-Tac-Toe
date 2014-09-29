@@ -64,8 +64,9 @@ public class Board4x4 implements Board {
     public ArrayList<char[]> makeRows() {
         ArrayList<char[]> rows = new ArrayList<char[]>();
         rows.add(Arrays.copyOfRange(grid, 0, 4));
-        rows.add(Arrays.copyOfRange(grid,4,8));
-        rows.add(Arrays.copyOfRange(grid,8,grid.length));
+        rows.add(Arrays.copyOfRange(grid, 4, 8));
+        rows.add(Arrays.copyOfRange(grid, 8, 12));
+        rows.add(Arrays.copyOfRange(grid, 12, grid.length));
         return rows;
     }
 
