@@ -4,6 +4,9 @@ apply plugin: 'maven-publish'
 
 mainClassName = 'me.jakenations.Main'
 
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
 sourceSets {
     main {
         java{
