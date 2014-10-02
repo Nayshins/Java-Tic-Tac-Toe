@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'maven-publish'
 
 mainClassName = 'me.jakenations.Main'
 
@@ -36,4 +37,20 @@ test {
 
 run{
     standardInput = System.in
+}
+
+group = 'me.jakenations'
+version = '1.0'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "http://s3.amazonaws.com/tttrepository/repository"
+        }
+    }
 }
